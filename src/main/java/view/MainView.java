@@ -53,8 +53,11 @@ public class MainView extends javax.swing.JFrame {
         CheckBoxUtilisateurModif = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(716, 510));
+        setMinimumSize(new java.awt.Dimension(716, 510));
+        setPreferredSize(new java.awt.Dimension(716, 510));
 
-        MainPanel.setPreferredSize(new java.awt.Dimension(800, 500));
+        MainPanel.setPreferredSize(new java.awt.Dimension(716, 510));
         MainPanel.setLayout(new java.awt.CardLayout());
 
         jMenu1.setText("File");
@@ -100,12 +103,12 @@ public class MainView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 704, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
         );
 
         pack();
