@@ -21,7 +21,7 @@ public class MainView extends javax.swing.JFrame {
         initComponents();
         
         this.utilisateurView=new UtilisateurView();
-        this.MainPanel.add(utilisateurView,"card");
+        this.MainPanel.add(utilisateurView,"cardViewUtilisateur");
         
         this.communeView=new CommuneView();
         this.MainPanel.add(communeView,"card");
@@ -37,71 +37,49 @@ public class MainView extends javax.swing.JFrame {
     private void initComponents() {
 
         MainPanel = new javax.swing.JPanel();
-        JPanelCommune = new javax.swing.JPanel();
-        JPanelUtilisateur = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
-        CheckBoxUtilisateur = new javax.swing.JCheckBoxMenuItem();
-        CheckBoxCommune = new javax.swing.JCheckBoxMenuItem();
+        CheckBoxUtilisateurListe = new javax.swing.JCheckBoxMenuItem();
+        CheckBoxUtilisateurAjout = new javax.swing.JCheckBoxMenuItem();
+        CheckBoxUtilisateurModif = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         MainPanel.setLayout(new java.awt.CardLayout());
-
-        JPanelCommune.setBackground(new java.awt.Color(242, 242, 42));
-
-        javax.swing.GroupLayout JPanelCommuneLayout = new javax.swing.GroupLayout(JPanelCommune);
-        JPanelCommune.setLayout(JPanelCommuneLayout);
-        JPanelCommuneLayout.setHorizontalGroup(
-            JPanelCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 562, Short.MAX_VALUE)
-        );
-        JPanelCommuneLayout.setVerticalGroup(
-            JPanelCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 413, Short.MAX_VALUE)
-        );
-
-        MainPanel.add(JPanelCommune, "CardNameCommune");
-
-        JPanelUtilisateur.setBackground(new java.awt.Color(0, 0, 0));
-
-        javax.swing.GroupLayout JPanelUtilisateurLayout = new javax.swing.GroupLayout(JPanelUtilisateur);
-        JPanelUtilisateur.setLayout(JPanelUtilisateurLayout);
-        JPanelUtilisateurLayout.setHorizontalGroup(
-            JPanelUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 562, Short.MAX_VALUE)
-        );
-        JPanelUtilisateurLayout.setVerticalGroup(
-            JPanelUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 413, Short.MAX_VALUE)
-        );
-
-        MainPanel.add(JPanelUtilisateur, "CardNameUtilisateur");
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Edit");
 
-        CheckBoxUtilisateur.setSelected(true);
-        CheckBoxUtilisateur.setText("CheckBoxUtilisateur");
-        CheckBoxUtilisateur.setActionCommand("");
-        CheckBoxUtilisateur.addActionListener(new java.awt.event.ActionListener() {
+        CheckBoxUtilisateurListe.setSelected(true);
+        CheckBoxUtilisateurListe.setText("CheckBoxUtilisateur");
+        CheckBoxUtilisateurListe.setActionCommand("");
+        CheckBoxUtilisateurListe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckBoxUtilisateurActionPerformed(evt);
+                CheckBoxUtilisateurListeActionPerformed(evt);
             }
         });
-        jMenu2.add(CheckBoxUtilisateur);
+        jMenu2.add(CheckBoxUtilisateurListe);
 
-        CheckBoxCommune.setSelected(true);
-        CheckBoxCommune.setText("jCheckBoxMenuItem2");
-        CheckBoxCommune.addActionListener(new java.awt.event.ActionListener() {
+        CheckBoxUtilisateurAjout.setSelected(true);
+        CheckBoxUtilisateurAjout.setText("jCheckBoxMenuItem2");
+        CheckBoxUtilisateurAjout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckBoxCommuneActionPerformed(evt);
+                CheckBoxUtilisateurAjoutActionPerformed(evt);
             }
         });
-        jMenu2.add(CheckBoxCommune);
+        jMenu2.add(CheckBoxUtilisateurAjout);
+
+        CheckBoxUtilisateurModif.setSelected(true);
+        CheckBoxUtilisateurModif.setText("jCheckBoxMenuItem1");
+        CheckBoxUtilisateurModif.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckBoxUtilisateurModifActionPerformed(evt);
+            }
+        });
+        jMenu2.add(CheckBoxUtilisateurModif);
 
         jMenuBar1.add(jMenu2);
 
@@ -124,19 +102,23 @@ public class MainView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CheckBoxCommuneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxCommuneActionPerformed
+    private void CheckBoxUtilisateurAjoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxUtilisateurAjoutActionPerformed
         // TODO add your handling code here:
         CardLayout card = (CardLayout)MainPanel.getLayout();
-        card.show(MainPanel, "CardNameUtilisateur");
+        card.show(MainPanel, "cardAjoutUtilisateur");
         
-    }//GEN-LAST:event_CheckBoxCommuneActionPerformed
+    }//GEN-LAST:event_CheckBoxUtilisateurAjoutActionPerformed
 
-    private void CheckBoxUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxUtilisateurActionPerformed
+    private void CheckBoxUtilisateurListeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxUtilisateurListeActionPerformed
         // TODO add your handling code here:
         CardLayout card = (CardLayout)MainPanel.getLayout();
-        card.show(MainPanel, "CardNameCommune");
+        card.show(MainPanel, "cardListeUtilisateur");
         
-    }//GEN-LAST:event_CheckBoxUtilisateurActionPerformed
+    }//GEN-LAST:event_CheckBoxUtilisateurListeActionPerformed
+
+    private void CheckBoxUtilisateurModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxUtilisateurModifActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CheckBoxUtilisateurModifActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,10 +126,9 @@ public class MainView extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBoxMenuItem CheckBoxCommune;
-    private javax.swing.JCheckBoxMenuItem CheckBoxUtilisateur;
-    private javax.swing.JPanel JPanelCommune;
-    private javax.swing.JPanel JPanelUtilisateur;
+    private javax.swing.JCheckBoxMenuItem CheckBoxUtilisateurAjout;
+    private javax.swing.JCheckBoxMenuItem CheckBoxUtilisateurListe;
+    private javax.swing.JCheckBoxMenuItem CheckBoxUtilisateurModif;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
