@@ -26,6 +26,8 @@ public class MainView extends javax.swing.JFrame {
         this.communeView=new CommuneView();
         this.MainPanel.add(communeView,"card");
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
