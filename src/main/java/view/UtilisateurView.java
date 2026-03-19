@@ -26,17 +26,74 @@ public class UtilisateurView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanelMainUtilisateur = new javax.swing.JPanel();
+        jPanelListeUtilisateur = new javax.swing.JPanel();
+        jPanelModificationUtilisateur = new javax.swing.JPanel();
+        jPanelAjoutUtilisateur = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanelMainUtilisateur.setLayout(new java.awt.CardLayout());
+
+        jPanelListeUtilisateur.setBackground(new java.awt.Color(242, 0, 242));
+
+        javax.swing.GroupLayout jPanelListeUtilisateurLayout = new javax.swing.GroupLayout(jPanelListeUtilisateur);
+        jPanelListeUtilisateur.setLayout(jPanelListeUtilisateurLayout);
+        jPanelListeUtilisateurLayout.setHorizontalGroup(
+            jPanelListeUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 588, Short.MAX_VALUE)
+        );
+        jPanelListeUtilisateurLayout.setVerticalGroup(
+            jPanelListeUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 463, Short.MAX_VALUE)
+        );
+
+        jPanelMainUtilisateur.add(jPanelListeUtilisateur, "cardListeUtilisateur");
+
+        jPanelModificationUtilisateur.setBackground(new java.awt.Color(0, 242, 242));
+
+        javax.swing.GroupLayout jPanelModificationUtilisateurLayout = new javax.swing.GroupLayout(jPanelModificationUtilisateur);
+        jPanelModificationUtilisateur.setLayout(jPanelModificationUtilisateurLayout);
+        jPanelModificationUtilisateurLayout.setHorizontalGroup(
+            jPanelModificationUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 627, Short.MAX_VALUE)
+        );
+        jPanelModificationUtilisateurLayout.setVerticalGroup(
+            jPanelModificationUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 481, Short.MAX_VALUE)
+        );
+
+        jPanelMainUtilisateur.add(jPanelModificationUtilisateur, "cardModificationUtilisateur");
+
+        jPanelAjoutUtilisateur.setBackground(new java.awt.Color(242, 242, 0));
+
+        javax.swing.GroupLayout jPanelAjoutUtilisateurLayout = new javax.swing.GroupLayout(jPanelAjoutUtilisateur);
+        jPanelAjoutUtilisateur.setLayout(jPanelAjoutUtilisateurLayout);
+        jPanelAjoutUtilisateurLayout.setHorizontalGroup(
+            jPanelAjoutUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+        jPanelAjoutUtilisateurLayout.setVerticalGroup(
+            jPanelAjoutUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 454, Short.MAX_VALUE)
+        );
+
+        jPanelMainUtilisateur.add(jPanelAjoutUtilisateur, "cardAjoutUtilisateur");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanelMainUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 630, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jPanelMainUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(443, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,5 +135,9 @@ public class UtilisateurView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanelAjoutUtilisateur;
+    private javax.swing.JPanel jPanelListeUtilisateur;
+    private javax.swing.JPanel jPanelMainUtilisateur;
+    private javax.swing.JPanel jPanelModificationUtilisateur;
     // End of variables declaration//GEN-END:variables
 }

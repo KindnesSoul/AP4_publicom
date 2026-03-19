@@ -11,12 +11,20 @@ import java.awt.CardLayout;
  * @author m.arakelian
  */
 public class MainView extends javax.swing.JFrame {
+    private UtilisateurView utilisateurView;
+    private CommuneView communeView;
 
     /**
      * Creates new form MainView
      */
     public MainView() {
         initComponents();
+        
+        this.utilisateurView=new UtilisateurView();
+        this.MainPanel.add(utilisateurView,"card");
+        
+        this.communeView=new CommuneView();
+        this.MainPanel.add(communeView,"card");
     }
 
     /**
