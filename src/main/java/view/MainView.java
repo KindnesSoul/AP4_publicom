@@ -24,7 +24,13 @@ public class MainView extends javax.swing.JFrame {
         this.MainPanel.add(utilisateurView,"cardViewUtilisateur");
         
         this.communeView=new CommuneView();
-        this.MainPanel.add(communeView,"card");
+        this.MainPanel.add(communeView,"cardViewCommune");
+        
+        CardLayout card = (CardLayout)MainPanel.getLayout();
+        card.show(MainPanel, "cardViewCommune");
+        
+        card = (CardLayout)communeView.getLayout();
+        card.show(communeView, "cardLayoutCommune");
     }
     
     
@@ -48,6 +54,7 @@ public class MainView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        MainPanel.setPreferredSize(new java.awt.Dimension(800, 500));
         MainPanel.setLayout(new java.awt.CardLayout());
 
         jMenu1.setText("File");
@@ -106,20 +113,29 @@ public class MainView extends javax.swing.JFrame {
 
     private void CheckBoxUtilisateurAjoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxUtilisateurAjoutActionPerformed
         // TODO add your handling code here:
-        CardLayout card = (CardLayout)utilisateurView.getLayout();
+        CardLayout card = (CardLayout)MainPanel.getLayout();
+        card.show(MainPanel, "cardViewUtilisateur");
+        
+        card = (CardLayout)utilisateurView.getLayout();
         card.show(utilisateurView, "cardAjoutUtilisateur");
         
     }//GEN-LAST:event_CheckBoxUtilisateurAjoutActionPerformed
 
     private void CheckBoxUtilisateurListeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxUtilisateurListeActionPerformed
         // TODO add your handling code here:
-        CardLayout card = (CardLayout)utilisateurView.getLayout();
+        CardLayout card = (CardLayout)MainPanel.getLayout();
+        card.show(MainPanel, "cardViewUtilisateur");
+        
+        card = (CardLayout)utilisateurView.getLayout();
         card.show(utilisateurView, "cardListeUtilisateur");
         
     }//GEN-LAST:event_CheckBoxUtilisateurListeActionPerformed
 
     private void CheckBoxUtilisateurModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxUtilisateurModifActionPerformed
-        CardLayout card = (CardLayout)utilisateurView.getLayout();
+        CardLayout card = (CardLayout)MainPanel.getLayout();
+        card.show(MainPanel, "cardViewUtilisateur");
+        
+        card = (CardLayout)utilisateurView.getLayout();
         card.show(utilisateurView, "cardModificationUtilisateur");
 // TODO add your handling code here:
     }//GEN-LAST:event_CheckBoxUtilisateurModifActionPerformed

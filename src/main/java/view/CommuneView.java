@@ -32,26 +32,34 @@ public class CommuneView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButtonAjout = new javax.swing.JButton();
-        jButtonModif = new javax.swing.JButton();
-        jButtonVoirEtudiant = new javax.swing.JButton();
-        jButtonSuppr = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jListCommune = new javax.swing.JList<>();
+        jPanelListeCommune = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jListCommune = new javax.swing.JList<>();
+        jButtonSuppr = new javax.swing.JButton();
+        jButtonVoirEtudiant = new javax.swing.JButton();
+        jButtonModif = new javax.swing.JButton();
+        jButtonAjout = new javax.swing.JButton();
 
-        jButtonAjout.setText("Ajouter");
-        jButtonAjout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAjoutActionPerformed(evt);
-            }
+        setLayout(new java.awt.CardLayout());
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Liste des communes");
+        jScrollPane2.setViewportView(jTextArea1);
+
+        jListCommune.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
         });
+        jScrollPane1.setViewportView(jListCommune);
 
-        jButtonModif.setText("modifier");
-        jButtonModif.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSuppr.setText("Supprimer");
+        jButtonSuppr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonModifActionPerformed(evt);
+                jButtonSupprActionPerformed(evt);
             }
         });
 
@@ -62,80 +70,83 @@ public class CommuneView extends javax.swing.JPanel {
             }
         });
 
-        jButtonSuppr.setText("Supprimer");
-        jButtonSuppr.addActionListener(new java.awt.event.ActionListener() {
+        jButtonModif.setText("modifier");
+        jButtonModif.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSupprActionPerformed(evt);
+                jButtonModifActionPerformed(evt);
             }
         });
 
-        jListCommune.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        jButtonAjout.setText("Ajouter");
+        jButtonAjout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAjoutActionPerformed(evt);
+            }
         });
-        jScrollPane1.setViewportView(jListCommune);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Liste des communes");
-        jScrollPane2.setViewportView(jTextArea1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonAjout)
-                .addGap(31, 31, 31))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtonVoirEtudiant)
-                        .addGap(124, 124, 124)
+        javax.swing.GroupLayout jPanelListeCommuneLayout = new javax.swing.GroupLayout(jPanelListeCommune);
+        jPanelListeCommune.setLayout(jPanelListeCommuneLayout);
+        jPanelListeCommuneLayout.setHorizontalGroup(
+            jPanelListeCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 685, Short.MAX_VALUE)
+            .addGroup(jPanelListeCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelListeCommuneLayout.createSequentialGroup()
+                    .addGap(3, 3, 3)
+                    .addGroup(jPanelListeCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelListeCommuneLayout.createSequentialGroup()
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonAjout))
+                        .addGroup(jPanelListeCommuneLayout.createSequentialGroup()
+                            .addGap(64, 64, 64)
+                            .addGroup(jPanelListeCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanelListeCommuneLayout.createSequentialGroup()
+                                    .addComponent(jButtonVoirEtudiant)
+                                    .addGap(124, 124, 124)
+                                    .addComponent(jButtonModif)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButtonSuppr))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(3, 3, 3)))
+        );
+        jPanelListeCommuneLayout.setVerticalGroup(
+            jPanelListeCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 451, Short.MAX_VALUE)
+            .addGroup(jPanelListeCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelListeCommuneLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPanelListeCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonAjout))
+                    .addGap(46, 46, 46)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                    .addGroup(jPanelListeCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButtonModif)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonSuppr))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(71, Short.MAX_VALUE))
+                        .addComponent(jButtonSuppr)
+                        .addComponent(jButtonVoirEtudiant))
+                    .addContainerGap()))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonAjout))
-                .addGap(46, 46, 46)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonModif)
-                    .addComponent(jButtonSuppr)
-                    .addComponent(jButtonVoirEtudiant))
-                .addGap(49, 49, 49))
-        );
+
+        add(jPanelListeCommune, "cardLayoutCommune");
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonAjoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAjoutActionPerformed
+    private void jButtonSupprActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSupprActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAjoutActionPerformed
+    }//GEN-LAST:event_jButtonSupprActionPerformed
 
     private void jButtonModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModifActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonModifActionPerformed
 
+    private void jButtonAjoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAjoutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonAjoutActionPerformed
+
     private void jButtonVoirEtudiantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoirEtudiantActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonVoirEtudiantActionPerformed
-
-    private void jButtonSupprActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSupprActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSupprActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -144,6 +155,7 @@ public class CommuneView extends javax.swing.JPanel {
     private javax.swing.JButton jButtonSuppr;
     private javax.swing.JButton jButtonVoirEtudiant;
     private javax.swing.JList<String> jListCommune;
+    private javax.swing.JPanel jPanelListeCommune;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
