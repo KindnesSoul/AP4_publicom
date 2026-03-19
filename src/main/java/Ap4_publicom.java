@@ -1,4 +1,5 @@
 
+import control.MainControl;
 import view.MainView;
 
 /*
@@ -12,10 +13,13 @@ import view.MainView;
 public class Ap4_publicom {
 
     public static void main(String[] args) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainView().setVisible(true);
-            }
+
+        java.awt.EventQueue.invokeLater(() -> {
+
+            MainView view = new MainView();
+            MainControl mainControl = new MainControl(view);
+            view.setVisible(true);
+
         });
     }
 }
