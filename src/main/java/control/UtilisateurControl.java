@@ -4,10 +4,15 @@
  */
 package control;
 
+import view.UtilisateurView;
+
 /**
  *
  * @author m.arakelian
  */
 public class UtilisateurControl {
+
+    public UtilisateurControl(UtilisateurView utilisateurView) {
+    }
     
 }

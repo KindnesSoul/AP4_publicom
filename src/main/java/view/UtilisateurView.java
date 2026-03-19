@@ -386,7 +386,7 @@ public class UtilisateurView extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonCancelAjoutUtilisateurActionPerformed
 
     private void jButtonAjouterListeUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAjouterListeUtilisateurActionPerformed
-        useLayout("cardListeUtilisateur");
+        useLayout("cardAjoutUtilisateur");
 // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAjouterListeUtilisateurActionPerformed
 

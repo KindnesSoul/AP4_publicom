@@ -157,4 +157,15 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
+    public void useLayout(String cardtext){
+        CardLayout card = (CardLayout) MainPanel.getLayout();
+        card.show(MainPanel, cardtext);
+    }
+
+    public CommuneView getCommuneView() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    public UtilisateurView getUtilisateurView() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
