@@ -29,10 +29,13 @@ public class UtilisateurView extends javax.swing.JPanel {
         jPanelAjoutUtilisateur = new javax.swing.JPanel();
         jPanelModificationUtilisateur = new javax.swing.JPanel();
         jPanelListeUtilisateur = new javax.swing.JPanel();
+        jScrollPaneUtilisateur = new javax.swing.JScrollPane();
+        jListUtilisateur = new javax.swing.JList<>();
 
         setLayout(new java.awt.CardLayout());
 
         jPanelAjoutUtilisateur.setBackground(new java.awt.Color(242, 242, 0));
+        jPanelAjoutUtilisateur.setPreferredSize(new java.awt.Dimension(800, 600));
 
         javax.swing.GroupLayout jPanelAjoutUtilisateurLayout = new javax.swing.GroupLayout(jPanelAjoutUtilisateur);
         jPanelAjoutUtilisateur.setLayout(jPanelAjoutUtilisateurLayout);
@@ -48,6 +51,7 @@ public class UtilisateurView extends javax.swing.JPanel {
         add(jPanelAjoutUtilisateur, "cardAjoutUtilisateur");
 
         jPanelModificationUtilisateur.setBackground(new java.awt.Color(0, 242, 242));
+        jPanelModificationUtilisateur.setPreferredSize(new java.awt.Dimension(800, 600));
 
         javax.swing.GroupLayout jPanelModificationUtilisateurLayout = new javax.swing.GroupLayout(jPanelModificationUtilisateur);
         jPanelModificationUtilisateur.setLayout(jPanelModificationUtilisateurLayout);
@@ -63,16 +67,30 @@ public class UtilisateurView extends javax.swing.JPanel {
         add(jPanelModificationUtilisateur, "cardModificationUtilisateur");
 
         jPanelListeUtilisateur.setBackground(new java.awt.Color(242, 0, 242));
+        jPanelListeUtilisateur.setPreferredSize(new java.awt.Dimension(800, 600));
+
+        jListUtilisateur.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPaneUtilisateur.setViewportView(jListUtilisateur);
 
         javax.swing.GroupLayout jPanelListeUtilisateurLayout = new javax.swing.GroupLayout(jPanelListeUtilisateur);
         jPanelListeUtilisateur.setLayout(jPanelListeUtilisateurLayout);
         jPanelListeUtilisateurLayout.setHorizontalGroup(
             jPanelListeUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 627, Short.MAX_VALUE)
+            .addGroup(jPanelListeUtilisateurLayout.createSequentialGroup()
+                .addGap(135, 135, 135)
+                .addComponent(jScrollPaneUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         jPanelListeUtilisateurLayout.setVerticalGroup(
             jPanelListeUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 481, Short.MAX_VALUE)
+            .addGroup(jPanelListeUtilisateurLayout.createSequentialGroup()
+                .addGap(132, 132, 132)
+                .addComponent(jScrollPaneUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(140, Short.MAX_VALUE))
         );
 
         add(jPanelListeUtilisateur, "cardListeUtilisateur");
@@ -80,8 +98,10 @@ public class UtilisateurView extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JList<String> jListUtilisateur;
     private javax.swing.JPanel jPanelAjoutUtilisateur;
     private javax.swing.JPanel jPanelListeUtilisateur;
     private javax.swing.JPanel jPanelModificationUtilisateur;
+    private javax.swing.JScrollPane jScrollPaneUtilisateur;
     // End of variables declaration//GEN-END:variables
 }
