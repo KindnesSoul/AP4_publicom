@@ -4,6 +4,8 @@
  */
 package view;
 
+import model.CommuneListModel;
+
 /**
  *
  * @author m.arakelian
@@ -15,6 +17,10 @@ public class CommuneView extends javax.swing.JPanel {
      */
     public CommuneView() {
         initComponents();
+    }
+    
+    public void setCommuneListModel(CommuneListModel communeListModel) {
+        this.jListCommune.setModel(communeListModel);
     }
 
     /**
