@@ -5,6 +5,9 @@
 package view;
 
 import java.awt.CardLayout;
+import java.beans.PropertyChangeSupport;
+import java.beans.PropertyChangeListener;
+import model.UtilisateurListModel;
 
 /**
  *
@@ -12,11 +15,16 @@ import java.awt.CardLayout;
  */
 public class UtilisateurView extends javax.swing.JPanel {
 
-    /**
-     * Creates new form UtilisateurView
-     */
+    private PropertyChangeSupport listeners = new PropertyChangeSupport(this);
+
+    
     public UtilisateurView() {
         initComponents();
+    }
+    
+    @Override
+    public void addPropertyChangeListener(PropertyChangeListener l) {
+        listeners.addPropertyChangeListener(l);
     }
 
     /**
@@ -152,7 +160,7 @@ public class UtilisateurView extends javax.swing.JPanel {
                 .addGap(43, 43, 43))
         );
 
-        add(jPanelEditUtilisateur, "cardAjoutUtilisateur");
+        add(jPanelEditUtilisateur, "cardEditUtilisateur");
 
         jPanelListeUtilisateur.setBackground(new java.awt.Color(242, 0, 242));
         jPanelListeUtilisateur.setPreferredSize(new java.awt.Dimension(800, 600));
@@ -224,7 +232,7 @@ public class UtilisateurView extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonModifierListeUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModifierListeUtilisateurActionPerformed
-        // TODO add your handling code here:
+    useLayout("cardEditUtilisateur");    // TODO add your handling code here:
     }//GEN-LAST:event_jButtonModifierListeUtilisateurActionPerformed
 
     private void jTextFieldEditPrenomUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEditPrenomUtilisateurActionPerformed
@@ -249,7 +257,7 @@ public class UtilisateurView extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonCancelEditUtilisateurActionPerformed
 
     private void jButtonAjouterListeUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAjouterListeUtilisateurActionPerformed
-        useLayout("cardEdittUtilisateur");
+        useLayout("cardEditUtilisateur");
 // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAjouterListeUtilisateurActionPerformed
 
@@ -279,5 +287,9 @@ public class UtilisateurView extends javax.swing.JPanel {
     public void useLayout(String cardtext){
         CardLayout card = (CardLayout)this.getLayout();
         card.show(this, cardtext);
+    }
+
+    public void setUtilisateurListModel(UtilisateurListModel utilisateurListModel) {
+        this.jListUtilisateur.setModel(utilisateurListModel);
     }
 }
