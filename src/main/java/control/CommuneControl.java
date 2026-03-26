@@ -10,33 +10,33 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.CommuneListModel;
 import view.CommuneView;
-
+import view.MainView;
 
 /**
  *
  * @author m.arakelian
  */
 public class CommuneControl implements PropertyChangeListener {
-    
+
     CommuneView communeview;
     CommuneListModel communeListModel;
-    
-    
-    public CommuneControl(CommuneView communeview) {
-        this.communeview = communeview;
+
+    public CommuneControl(CommuneView communeView) {
+
+        this.communeview = communeView;
         this.communeview.addPropertyChangeListener(this);
-        
+
         try {
             this.communeListModel = new CommuneListModel();
             this.communeview.setCommuneListModel(this.communeListModel);
         } catch (Exception ex) {
             Logger.getLogger(CommuneControl.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
-    
-    public void propertyChange(PropertyChangeEvent evt){
-        switch(evt.getPropertyName()){
+
+    public void propertyChange(PropertyChangeEvent evt) {
+        switch (evt.getPropertyName()) {
             case "validModifUser":
                 break;
             case "validNouvelleCommune":
@@ -44,7 +44,19 @@ public class CommuneControl implements PropertyChangeListener {
                 int codePostal = this.communeview.getCodePostal();
                 String description = this.communeview.getDescription();
                 this.communeListModel.save(0, nom, codePostal, description);
+                this.communeview.useLayout("cardLayoutCommune");
+                refreshCommuneView();
                 break;
+        }
+
+    }
+
+    public void refreshCommuneView() {
+        try {
+            this.communeListModel = new CommuneListModel();
+            this.communeview.setCommuneListModel(this.communeListModel);
+        } catch (Exception ex) {
+            Logger.getLogger(CommuneControl.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

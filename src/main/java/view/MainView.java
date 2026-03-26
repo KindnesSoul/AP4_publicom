@@ -11,6 +11,7 @@ import java.awt.CardLayout;
  * @author m.arakelian
  */
 public class MainView extends javax.swing.JFrame {
+
     private UtilisateurView utilisateurView;
     private CommuneView communeView;
 
@@ -19,21 +20,19 @@ public class MainView extends javax.swing.JFrame {
      */
     public MainView() {
         initComponents();
-        
-        this.utilisateurView=new UtilisateurView();
-        this.MainPanel.add(utilisateurView,"cardViewUtilisateur");
-        
-        this.communeView=new CommuneView();
-        this.MainPanel.add(communeView,"cardViewCommune");
-        
-        CardLayout card = (CardLayout)MainPanel.getLayout();
+
+        this.utilisateurView = new UtilisateurView();
+        this.MainPanel.add(utilisateurView, "cardViewUtilisateur");
+
+        this.communeView = new CommuneView();
+        this.MainPanel.add(communeView, "cardViewCommune");
+
+        CardLayout card = (CardLayout) MainPanel.getLayout();
         card.show(MainPanel, "cardViewCommune");
-        
-        card = (CardLayout)communeView.getLayout();
+
+        card = (CardLayout) communeView.getLayout();
         card.show(communeView, "cardLayoutCommune");
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -115,29 +114,29 @@ public class MainView extends javax.swing.JFrame {
 
     private void CheckBoxUtilisateurAjoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxUtilisateurAjoutActionPerformed
         // TODO add your handling code here:
-        CardLayout card = (CardLayout)MainPanel.getLayout();
+        CardLayout card = (CardLayout) MainPanel.getLayout();
         card.show(MainPanel, "cardViewUtilisateur");
-        
-        card = (CardLayout)utilisateurView.getLayout();
+
+        card = (CardLayout) utilisateurView.getLayout();
         card.show(utilisateurView, "cardEditUtilisateur");
-        
+
     }//GEN-LAST:event_CheckBoxUtilisateurAjoutActionPerformed
 
     private void CheckBoxUtilisateurListeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxUtilisateurListeActionPerformed
         // TODO add your handling code here:
-        CardLayout card = (CardLayout)MainPanel.getLayout();
+        CardLayout card = (CardLayout) MainPanel.getLayout();
         card.show(MainPanel, "cardViewUtilisateur");
-        
-        card = (CardLayout)utilisateurView.getLayout();
+
+        card = (CardLayout) utilisateurView.getLayout();
         card.show(utilisateurView, "cardListeUtilisateur");
-        
+
     }//GEN-LAST:event_CheckBoxUtilisateurListeActionPerformed
 
     private void CheckBoxUtilisateurModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxUtilisateurModifActionPerformed
-        CardLayout card = (CardLayout)MainPanel.getLayout();
+        CardLayout card = (CardLayout) MainPanel.getLayout();
         card.show(MainPanel, "cardViewUtilisateur");
-        
-        card = (CardLayout)utilisateurView.getLayout();
+
+        card = (CardLayout) utilisateurView.getLayout();
         card.show(utilisateurView, "cardEditUtilisateur");
 // TODO add your handling code here:
     }//GEN-LAST:event_CheckBoxUtilisateurModifActionPerformed
@@ -145,7 +144,6 @@ public class MainView extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBoxMenuItem CheckBoxUtilisateurAjout;
@@ -156,7 +154,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
-    public void useLayout(String cardtext){
+    public void useLayout(String cardtext) {
         CardLayout card = (CardLayout) MainPanel.getLayout();
         card.show(MainPanel, cardtext);
     }
@@ -164,6 +162,7 @@ public class MainView extends javax.swing.JFrame {
     public CommuneView getCommuneView() {
         return this.communeView;
     }
+
     public UtilisateurView getUtilisateurView() {
         return this.utilisateurView;
     }

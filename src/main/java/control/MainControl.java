@@ -14,10 +14,13 @@ public class MainControl {
     
     private MainView mainView;
     
+    
     public MainControl(MainView mainView){
         this.mainView = mainView;
-        new CommuneControl(mainView.getCommuneView());
+        new CommuneControl(this.mainView.getCommuneView());
         new UtilisateurControl(mainView.getUtilisateurView());
     }
+    
+    
     
 }
