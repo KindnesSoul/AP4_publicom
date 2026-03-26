@@ -36,5 +36,15 @@ public class CommuneListModel extends AbstractListModel {
         this.communes = ComDao.getAll();
         this.fireContentsChanged(null, 0, 0);
     }
+
+    public void save(int i, String nom, int codePostal, String description) {
+        
+        Commune commune = new Commune(i, nom, codePostal, description);
+        if (i == 0) {
+            //ComDao.insert(commune);
+        } else {
+            //ComDao.update(commune);
+        }
+    }
     
 }

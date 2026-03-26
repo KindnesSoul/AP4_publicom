@@ -162,9 +162,9 @@ public class MainView extends javax.swing.JFrame {
     }
 
     public CommuneView getCommuneView() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.communeView;
     }
     public UtilisateurView getUtilisateurView() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.utilisateurView;
     }
 }

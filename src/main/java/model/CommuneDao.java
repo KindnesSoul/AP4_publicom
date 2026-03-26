@@ -31,7 +31,7 @@ public class CommuneDao {
 
         try {
 
-            String query = "SELECT * FROM departement";
+            String query = "SELECT * FROM commune";
             PreparedStatement ps = connexion.prepareStatement(query);
 
             ResultSet rs = ps.executeQuery();

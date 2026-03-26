@@ -4,6 +4,9 @@
  */
 package view;
 
+import java.awt.event.ActionEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import model.CommuneListModel;
 
 /**
@@ -12,16 +15,25 @@ import model.CommuneListModel;
  */
 public class CommuneView extends javax.swing.JPanel {
 
-    /**
-     * Creates new form CommuneView1
-     */
+    private PropertyChangeSupport listeners = new PropertyChangeSupport(this);
+
+    public void addPropertyChangeListener(PropertyChangeListener l) {
+        listeners.addPropertyChangeListener(l);
+    }
+
+    private void btnValidModifActionPerfomed(ActionEvent evt) {
+        listeners.firePropertyChange("validModifUser", null, null);
+    }
+
+    public void setCommuneListModel(CommuneListModel communeListModel) {
+        this.jListCommune.setModel(communeListModel);
+    }
+    
     public CommuneView() {
         initComponents();
     }
     
-    public void setCommuneListModel(CommuneListModel communeListModel) {
-        this.jListCommune.setModel(communeListModel);
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -264,9 +276,6 @@ public class CommuneView extends javax.swing.JPanel {
             .addGroup(jPanelAddPanelLayout.createSequentialGroup()
                 .addGroup(jPanelAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelAddPanelLayout.createSequentialGroup()
-                        .addGap(222, 222, 222)
-                        .addComponent(jLabelModifCommune1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelAddPanelLayout.createSequentialGroup()
                         .addGap(178, 178, 178)
                         .addGroup(jPanelAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFieldAddDescrip, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -277,15 +286,18 @@ public class CommuneView extends javax.swing.JPanel {
                             .addComponent(jLabel7)
                             .addGroup(jPanelAddPanelLayout.createSequentialGroup()
                                 .addGap(95, 95, 95)
-                                .addComponent(jButtonAddValider, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(195, Short.MAX_VALUE))
+                                .addComponent(jButtonAddValider, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanelAddPanelLayout.createSequentialGroup()
+                        .addGap(214, 214, 214)
+                        .addComponent(jLabelModifCommune1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(241, Short.MAX_VALUE))
         );
         jPanelAddPanelLayout.setVerticalGroup(
             jPanelAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelAddPanelLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(66, 66, 66)
                 .addComponent(jLabelModifCommune1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldAddNom, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -371,4 +383,16 @@ public class CommuneView extends javax.swing.JPanel {
     private javax.swing.JTextField jTextFieldEditDescrip;
     private javax.swing.JTextField jTextFieldEditNom;
     // End of variables declaration//GEN-END:variables
+
+    public String getNom() {
+        return this.jTextFieldAddNom.getText(); 
+    }
+
+    public int getCodePostal() {
+        return Integer.parseInt(this.jTextFieldAddCodePostal.getText()); 
+    }
+
+    public String getDescription() {
+        return this.jTextFieldAddDescrip.getText();
+    }
 }

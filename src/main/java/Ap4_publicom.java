@@ -17,7 +17,7 @@ public class Ap4_publicom {
         java.awt.EventQueue.invokeLater(() -> {
 
             MainView view = new MainView();
-            //MainControl mainControl = new MainControl(view);
+            MainControl mainControl = new MainControl(view);
             view.setVisible(true);
 
         });

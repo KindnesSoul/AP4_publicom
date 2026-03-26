@@ -13,12 +13,11 @@ import view.MainView;
 public class MainControl {
     
     private MainView mainView;
-    private CommuneControl communeControl;
     
     public MainControl(MainView mainView){
         this.mainView = mainView;
-        CommuneControl communeControl = new CommuneControl(mainView.getCommuneView());
-        UtilisateurControl utilisateurControl = new UtilisateurControl(mainView.getUtilisateurView());
+        new CommuneControl(mainView.getCommuneView());
+        new UtilisateurControl(mainView.getUtilisateurView());
     }
     
 }
