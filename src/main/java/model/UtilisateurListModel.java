@@ -15,13 +15,13 @@ public class UtilisateurListModel extends AbstractListModel{
     private ArrayList<Utilisateur> listeUtilisateur= new ArrayList<Utilisateur>();
     private UtilisateurDAO utilisateurDAO;
     
-    public UtilisateurListModel (){
+    public UtilisateurListModel (int idCommune){
         this.utilisateurDAO=new UtilisateurDAO();
-        this.refresh();
-    }
+        this.refresh(idCommune);
+    } 
     
-    private void refresh(){
-        this.listeUtilisateur=this.utilisateurDAO.getAllUtilisateur();
+    private void refresh(int idCommune){
+        this.listeUtilisateur=this.utilisateurDAO.getAllUtilisateur(idCommune);
     }
 
     @Override

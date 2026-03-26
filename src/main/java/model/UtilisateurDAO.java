@@ -23,8 +23,8 @@ public class UtilisateurDAO {
        this.connexion=Connexion.getConnection();
    }
 
-    public ArrayList<Utilisateur> getAllUtilisateur() {
-        String SQL =("select * from utilisateur");
+    public ArrayList<Utilisateur> getAllUtilisateur(int idCommune) {
+        String SQL =("select * from utilisateur where "+idCommune+"=id_utilisateurcommune");
         ArrayList<Utilisateur> listeUtilisateur = new ArrayList<Utilisateur>();
         try (PreparedStatement preparedStatement = connexion.prepareStatement(SQL)) {
              ResultSet res = preparedStatement.executeQuery();

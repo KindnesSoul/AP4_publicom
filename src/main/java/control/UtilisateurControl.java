@@ -23,7 +23,7 @@ public class UtilisateurControl implements PropertyChangeListener {
         this.utilisateurView=utilisateurView;
         this.utilisateurView.addPropertyChangeListener(this);
         try{
-            this.utilisateurListModel=new UtilisateurListModel();
+            this.utilisateurListModel=new UtilisateurListModel(7);//modifier avec l'id transmit par les communes
             this.utilisateurView.setUtilisateurListModel(this.utilisateurListModel);
         }catch(Exception ex){
             Logger.getLogger(CommuneControl.class.getName()).log(Level.SEVERE, null, ex);
