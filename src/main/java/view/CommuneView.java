@@ -119,7 +119,7 @@ public class CommuneView extends javax.swing.JPanel {
             .addGroup(jPanelListeCommuneLayout.createSequentialGroup()
                 .addGroup(jPanelListeCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelListeCommuneLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
+                        .addContainerGap(64, Short.MAX_VALUE)
                         .addGroup(jPanelListeCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanelListeCommuneLayout.createSequentialGroup()
@@ -228,7 +228,7 @@ public class CommuneView extends javax.swing.JPanel {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldEditDescrip, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addGroup(jPanelEditCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonEditRetour, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonEditValider, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -308,7 +308,7 @@ public class CommuneView extends javax.swing.JPanel {
                 .addComponent(jTextFieldAddDescrip, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
                 .addComponent(jButtonAddValider, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         add(jPanelAddPanel, "cardAjoutCommune");
