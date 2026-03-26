@@ -55,7 +55,6 @@ public class MainView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(716, 510));
         setMinimumSize(new java.awt.Dimension(716, 510));
-        setPreferredSize(new java.awt.Dimension(716, 510));
 
         MainPanel.setPreferredSize(new java.awt.Dimension(716, 510));
         MainPanel.setLayout(new java.awt.CardLayout());
@@ -120,7 +119,7 @@ public class MainView extends javax.swing.JFrame {
         card.show(MainPanel, "cardViewUtilisateur");
         
         card = (CardLayout)utilisateurView.getLayout();
-        card.show(utilisateurView, "cardAjoutUtilisateur");
+        card.show(utilisateurView, "cardEditUtilisateur");
         
     }//GEN-LAST:event_CheckBoxUtilisateurAjoutActionPerformed
 
@@ -139,7 +138,7 @@ public class MainView extends javax.swing.JFrame {
         card.show(MainPanel, "cardViewUtilisateur");
         
         card = (CardLayout)utilisateurView.getLayout();
-        card.show(utilisateurView, "cardModificationUtilisateur");
+        card.show(utilisateurView, "cardEditUtilisateur");
 // TODO add your handling code here:
     }//GEN-LAST:event_CheckBoxUtilisateurModifActionPerformed
 

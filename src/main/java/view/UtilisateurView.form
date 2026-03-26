@@ -16,7 +16,7 @@
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanelAjoutUtilisateur">
+    <Container class="javax.swing.JPanel" name="jPanelEditUtilisateur">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="f2" red="f2" type="rgb"/>
@@ -36,9 +36,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="200" max="-2" attributes="0"/>
-                  <Component id="jButtonValiderAjoutUtilisateur" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonValiderEditUtilisateur" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButtonCancelAjoutUtilisateur" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonCancelEditUtilisateur" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="200" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
@@ -46,19 +46,19 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabelAjoutPrenomUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextFieldAjoutIdentifiantUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
-                              <Component id="jTextFieldAjoutPrenomUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
-                              <Component id="jTextFieldAjoutNomUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
-                              <Component id="jTextFieldPasswordAjoutUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
-                              <Component id="jLabelAjoutPasswordUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelAjoutIdentifiantUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelAjoutNomUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelEditPrenomUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextFieldEditIdentifiantUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
+                              <Component id="jTextFieldEditPrenomUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
+                              <Component id="jTextFieldEditNomUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
+                              <Component id="jTextFieldPasswordEditUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
+                              <Component id="jLabelEditPasswordUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelEditIdentifiantUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelEditNomUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="250" max="-2" attributes="0"/>
-                          <Component id="jLabelTitreAjoutUtilisateur" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelTitreEditUtilisateur" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="150" max="32767" attributes="0"/>
@@ -69,27 +69,27 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                  <Component id="jLabelTitreAjoutUtilisateur" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelTitreEditUtilisateur" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                  <Component id="jLabelAjoutPrenomUtilisateur" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelEditPrenomUtilisateur" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTextFieldAjoutPrenomUtilisateur" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldEditPrenomUtilisateur" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                  <Component id="jLabelAjoutNomUtilisateur" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelEditNomUtilisateur" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTextFieldAjoutNomUtilisateur" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldEditNomUtilisateur" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                  <Component id="jLabelAjoutIdentifiantUtilisateur" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelEditIdentifiantUtilisateur" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTextFieldAjoutIdentifiantUtilisateur" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldEditIdentifiantUtilisateur" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                  <Component id="jLabelAjoutPasswordUtilisateur" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelEditPasswordUtilisateur" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTextFieldPasswordAjoutUtilisateur" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldPasswordEditUtilisateur" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="107" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButtonValiderAjoutUtilisateur" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButtonCancelAjoutUtilisateur" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonValiderEditUtilisateur" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonCancelEditUtilisateur" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               </Group>
@@ -97,7 +97,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabelTitreAjoutUtilisateur">
+        <Component class="javax.swing.JLabel" name="jLabelTitreEditUtilisateur">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial Black" size="24" style="0"/>
@@ -105,202 +105,58 @@
             <Property name="text" type="java.lang.String" value="Ajout Utilisateur"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabelAjoutPrenomUtilisateur">
+        <Component class="javax.swing.JLabel" name="jLabelEditPrenomUtilisateur">
           <Properties>
             <Property name="text" type="java.lang.String" value="Prenom"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldAjoutPrenomUtilisateur">
+        <Component class="javax.swing.JTextField" name="jTextFieldEditPrenomUtilisateur">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldAjoutPrenomUtilisateurActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldEditPrenomUtilisateurActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabelAjoutNomUtilisateur">
+        <Component class="javax.swing.JLabel" name="jLabelEditNomUtilisateur">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nom"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldAjoutNomUtilisateur">
+        <Component class="javax.swing.JTextField" name="jTextFieldEditNomUtilisateur">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldAjoutNomUtilisateurActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldEditNomUtilisateurActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabelAjoutIdentifiantUtilisateur">
+        <Component class="javax.swing.JLabel" name="jLabelEditIdentifiantUtilisateur">
           <Properties>
             <Property name="text" type="java.lang.String" value="Identifiant"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldAjoutIdentifiantUtilisateur">
+        <Component class="javax.swing.JTextField" name="jTextFieldEditIdentifiantUtilisateur">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldAjoutIdentifiantUtilisateurActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldEditIdentifiantUtilisateurActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabelAjoutPasswordUtilisateur">
+        <Component class="javax.swing.JLabel" name="jLabelEditPasswordUtilisateur">
           <Properties>
             <Property name="text" type="java.lang.String" value="Mot de Passe"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldPasswordAjoutUtilisateur">
+        <Component class="javax.swing.JTextField" name="jTextFieldPasswordEditUtilisateur">
         </Component>
-        <Component class="javax.swing.JButton" name="jButtonValiderAjoutUtilisateur">
+        <Component class="javax.swing.JButton" name="jButtonValiderEditUtilisateur">
           <Properties>
             <Property name="text" type="java.lang.String" value="Valider"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonValiderAjoutUtilisateurActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonValiderEditUtilisateurActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButtonCancelAjoutUtilisateur">
+        <Component class="javax.swing.JButton" name="jButtonCancelEditUtilisateur">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cancel"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCancelAjoutUtilisateurActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCancelEditUtilisateurActionPerformed"/>
           </Events>
-        </Component>
-      </SubComponents>
-    </Container>
-    <Container class="javax.swing.JPanel" name="jPanelModificationUtilisateur">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="f2" green="f2" red="0" type="rgb"/>
-        </Property>
-        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[800, 600]"/>
-        </Property>
-      </Properties>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-          <CardConstraints cardName="cardModificationUtilisateur"/>
-        </Constraint>
-      </Constraints>
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="200" max="-2" attributes="0"/>
-                  <Component id="jButtonValiderModificationUtilisateur" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButtonCancelModificationUtilisateur" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="200" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabelModificationPrenomUtilisateur" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextFieldModificationIdentifiantUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
-                              <Component id="jTextFieldModificationPrenomUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
-                              <Component id="jTextFieldModificationNomUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
-                              <Component id="jTextFieldPasswordModificationUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
-                              <Component id="jLabelModificationPasswordUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelModificationIdentifiantUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelModificationNomUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="250" max="-2" attributes="0"/>
-                          <Component id="jLabelTitreModificationUtilisateur" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace pref="150" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                  <Component id="jLabelTitreModificationUtilisateur" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                  <Component id="jLabelModificationPrenomUtilisateur" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTextFieldModificationPrenomUtilisateur" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                  <Component id="jLabelModificationNomUtilisateur" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTextFieldModificationNomUtilisateur" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                  <Component id="jLabelModificationIdentifiantUtilisateur" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTextFieldModificationIdentifiantUtilisateur" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                  <Component id="jLabelModificationPasswordUtilisateur" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTextFieldPasswordModificationUtilisateur" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="107" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButtonValiderModificationUtilisateur" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButtonCancelModificationUtilisateur" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JTextField" name="jTextFieldModificationPrenomUtilisateur">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldModificationPrenomUtilisateurActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldModificationNomUtilisateur">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldModificationNomUtilisateurActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldPasswordModificationUtilisateur">
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldModificationIdentifiantUtilisateur">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldModificationIdentifiantUtilisateurActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButtonValiderModificationUtilisateur">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Valider"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonValiderModificationUtilisateurActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButtonCancelModificationUtilisateur">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Cancel"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCancelModificationUtilisateurActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelModificationPrenomUtilisateur">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Prenom"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelModificationNomUtilisateur">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Nom"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelModificationIdentifiantUtilisateur">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Identifiant"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelModificationPasswordUtilisateur">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Mot de Passe"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelTitreModificationUtilisateur">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial Black" size="24" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Modification Utilisateur"/>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>

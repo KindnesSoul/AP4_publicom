@@ -28,30 +28,18 @@ public class UtilisateurView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelAjoutUtilisateur = new javax.swing.JPanel();
-        jLabelTitreAjoutUtilisateur = new javax.swing.JLabel();
-        jLabelAjoutPrenomUtilisateur = new javax.swing.JLabel();
-        jTextFieldAjoutPrenomUtilisateur = new javax.swing.JTextField();
-        jLabelAjoutNomUtilisateur = new javax.swing.JLabel();
-        jTextFieldAjoutNomUtilisateur = new javax.swing.JTextField();
-        jLabelAjoutIdentifiantUtilisateur = new javax.swing.JLabel();
-        jTextFieldAjoutIdentifiantUtilisateur = new javax.swing.JTextField();
-        jLabelAjoutPasswordUtilisateur = new javax.swing.JLabel();
-        jTextFieldPasswordAjoutUtilisateur = new javax.swing.JTextField();
-        jButtonValiderAjoutUtilisateur = new javax.swing.JButton();
-        jButtonCancelAjoutUtilisateur = new javax.swing.JButton();
-        jPanelModificationUtilisateur = new javax.swing.JPanel();
-        jTextFieldModificationPrenomUtilisateur = new javax.swing.JTextField();
-        jTextFieldModificationNomUtilisateur = new javax.swing.JTextField();
-        jTextFieldPasswordModificationUtilisateur = new javax.swing.JTextField();
-        jTextFieldModificationIdentifiantUtilisateur = new javax.swing.JTextField();
-        jButtonValiderModificationUtilisateur = new javax.swing.JButton();
-        jButtonCancelModificationUtilisateur = new javax.swing.JButton();
-        jLabelModificationPrenomUtilisateur = new javax.swing.JLabel();
-        jLabelModificationNomUtilisateur = new javax.swing.JLabel();
-        jLabelModificationIdentifiantUtilisateur = new javax.swing.JLabel();
-        jLabelModificationPasswordUtilisateur = new javax.swing.JLabel();
-        jLabelTitreModificationUtilisateur = new javax.swing.JLabel();
+        jPanelEditUtilisateur = new javax.swing.JPanel();
+        jLabelTitreEditUtilisateur = new javax.swing.JLabel();
+        jLabelEditPrenomUtilisateur = new javax.swing.JLabel();
+        jTextFieldEditPrenomUtilisateur = new javax.swing.JTextField();
+        jLabelEditNomUtilisateur = new javax.swing.JLabel();
+        jTextFieldEditNomUtilisateur = new javax.swing.JTextField();
+        jLabelEditIdentifiantUtilisateur = new javax.swing.JLabel();
+        jTextFieldEditIdentifiantUtilisateur = new javax.swing.JTextField();
+        jLabelEditPasswordUtilisateur = new javax.swing.JLabel();
+        jTextFieldPasswordEditUtilisateur = new javax.swing.JTextField();
+        jButtonValiderEditUtilisateur = new javax.swing.JButton();
+        jButtonCancelEditUtilisateur = new javax.swing.JButton();
         jPanelListeUtilisateur = new javax.swing.JPanel();
         jScrollPaneUtilisateur = new javax.swing.JScrollPane();
         jListUtilisateur = new javax.swing.JList<>();
@@ -62,213 +50,109 @@ public class UtilisateurView extends javax.swing.JPanel {
 
         setLayout(new java.awt.CardLayout());
 
-        jPanelAjoutUtilisateur.setBackground(new java.awt.Color(242, 242, 0));
-        jPanelAjoutUtilisateur.setPreferredSize(new java.awt.Dimension(800, 600));
+        jPanelEditUtilisateur.setBackground(new java.awt.Color(242, 242, 0));
+        jPanelEditUtilisateur.setPreferredSize(new java.awt.Dimension(800, 600));
 
-        jLabelTitreAjoutUtilisateur.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabelTitreAjoutUtilisateur.setText("Ajout Utilisateur");
+        jLabelTitreEditUtilisateur.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabelTitreEditUtilisateur.setText("Ajout Utilisateur");
 
-        jLabelAjoutPrenomUtilisateur.setText("Prenom");
+        jLabelEditPrenomUtilisateur.setText("Prenom");
 
-        jTextFieldAjoutPrenomUtilisateur.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldEditPrenomUtilisateur.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldAjoutPrenomUtilisateurActionPerformed(evt);
+                jTextFieldEditPrenomUtilisateurActionPerformed(evt);
             }
         });
 
-        jLabelAjoutNomUtilisateur.setText("Nom");
+        jLabelEditNomUtilisateur.setText("Nom");
 
-        jTextFieldAjoutNomUtilisateur.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldEditNomUtilisateur.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldAjoutNomUtilisateurActionPerformed(evt);
+                jTextFieldEditNomUtilisateurActionPerformed(evt);
             }
         });
 
-        jLabelAjoutIdentifiantUtilisateur.setText("Identifiant");
+        jLabelEditIdentifiantUtilisateur.setText("Identifiant");
 
-        jTextFieldAjoutIdentifiantUtilisateur.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldEditIdentifiantUtilisateur.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldAjoutIdentifiantUtilisateurActionPerformed(evt);
+                jTextFieldEditIdentifiantUtilisateurActionPerformed(evt);
             }
         });
 
-        jLabelAjoutPasswordUtilisateur.setText("Mot de Passe");
+        jLabelEditPasswordUtilisateur.setText("Mot de Passe");
 
-        jButtonValiderAjoutUtilisateur.setText("Valider");
-        jButtonValiderAjoutUtilisateur.addActionListener(new java.awt.event.ActionListener() {
+        jButtonValiderEditUtilisateur.setText("Valider");
+        jButtonValiderEditUtilisateur.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonValiderAjoutUtilisateurActionPerformed(evt);
+                jButtonValiderEditUtilisateurActionPerformed(evt);
             }
         });
 
-        jButtonCancelAjoutUtilisateur.setText("Cancel");
-        jButtonCancelAjoutUtilisateur.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCancelEditUtilisateur.setText("Cancel");
+        jButtonCancelEditUtilisateur.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCancelAjoutUtilisateurActionPerformed(evt);
+                jButtonCancelEditUtilisateurActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanelAjoutUtilisateurLayout = new javax.swing.GroupLayout(jPanelAjoutUtilisateur);
-        jPanelAjoutUtilisateur.setLayout(jPanelAjoutUtilisateurLayout);
-        jPanelAjoutUtilisateurLayout.setHorizontalGroup(
-            jPanelAjoutUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelAjoutUtilisateurLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelEditUtilisateurLayout = new javax.swing.GroupLayout(jPanelEditUtilisateur);
+        jPanelEditUtilisateur.setLayout(jPanelEditUtilisateurLayout);
+        jPanelEditUtilisateurLayout.setHorizontalGroup(
+            jPanelEditUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEditUtilisateurLayout.createSequentialGroup()
                 .addGap(200, 200, 200)
-                .addComponent(jButtonValiderAjoutUtilisateur)
+                .addComponent(jButtonValiderEditUtilisateur)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonCancelAjoutUtilisateur)
+                .addComponent(jButtonCancelEditUtilisateur)
                 .addGap(200, 200, 200))
-            .addGroup(jPanelAjoutUtilisateurLayout.createSequentialGroup()
-                .addGroup(jPanelAjoutUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelAjoutUtilisateurLayout.createSequentialGroup()
+            .addGroup(jPanelEditUtilisateurLayout.createSequentialGroup()
+                .addGroup(jPanelEditUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelEditUtilisateurLayout.createSequentialGroup()
                         .addGap(150, 150, 150)
-                        .addGroup(jPanelAjoutUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelAjoutPrenomUtilisateur)
-                            .addComponent(jTextFieldAjoutIdentifiantUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldAjoutPrenomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldAjoutNomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldPasswordAjoutUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelAjoutPasswordUtilisateur)
-                            .addComponent(jLabelAjoutIdentifiantUtilisateur)
-                            .addComponent(jLabelAjoutNomUtilisateur)))
-                    .addGroup(jPanelAjoutUtilisateurLayout.createSequentialGroup()
+                        .addGroup(jPanelEditUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelEditPrenomUtilisateur)
+                            .addComponent(jTextFieldEditIdentifiantUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldEditPrenomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldEditNomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldPasswordEditUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelEditPasswordUtilisateur)
+                            .addComponent(jLabelEditIdentifiantUtilisateur)
+                            .addComponent(jLabelEditNomUtilisateur)))
+                    .addGroup(jPanelEditUtilisateurLayout.createSequentialGroup()
                         .addGap(250, 250, 250)
-                        .addComponent(jLabelTitreAjoutUtilisateur)))
+                        .addComponent(jLabelTitreEditUtilisateur)))
                 .addContainerGap(150, Short.MAX_VALUE))
         );
-        jPanelAjoutUtilisateurLayout.setVerticalGroup(
-            jPanelAjoutUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelAjoutUtilisateurLayout.createSequentialGroup()
+        jPanelEditUtilisateurLayout.setVerticalGroup(
+            jPanelEditUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEditUtilisateurLayout.createSequentialGroup()
                 .addGap(48, 48, 48)
-                .addComponent(jLabelTitreAjoutUtilisateur)
+                .addComponent(jLabelTitreEditUtilisateur)
                 .addGap(39, 39, 39)
-                .addComponent(jLabelAjoutPrenomUtilisateur)
+                .addComponent(jLabelEditPrenomUtilisateur)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldAjoutPrenomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldEditPrenomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
-                .addComponent(jLabelAjoutNomUtilisateur)
+                .addComponent(jLabelEditNomUtilisateur)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldAjoutNomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldEditNomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
-                .addComponent(jLabelAjoutIdentifiantUtilisateur)
+                .addComponent(jLabelEditIdentifiantUtilisateur)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldAjoutIdentifiantUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldEditIdentifiantUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
-                .addComponent(jLabelAjoutPasswordUtilisateur)
+                .addComponent(jLabelEditPasswordUtilisateur)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldPasswordAjoutUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldPasswordEditUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
-                .addGroup(jPanelAjoutUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonValiderAjoutUtilisateur)
-                    .addComponent(jButtonCancelAjoutUtilisateur))
+                .addGroup(jPanelEditUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonValiderEditUtilisateur)
+                    .addComponent(jButtonCancelEditUtilisateur))
                 .addGap(43, 43, 43))
         );
 
-        add(jPanelAjoutUtilisateur, "cardAjoutUtilisateur");
-
-        jPanelModificationUtilisateur.setBackground(new java.awt.Color(0, 242, 242));
-        jPanelModificationUtilisateur.setPreferredSize(new java.awt.Dimension(800, 600));
-
-        jTextFieldModificationPrenomUtilisateur.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldModificationPrenomUtilisateurActionPerformed(evt);
-            }
-        });
-
-        jTextFieldModificationNomUtilisateur.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldModificationNomUtilisateurActionPerformed(evt);
-            }
-        });
-
-        jTextFieldModificationIdentifiantUtilisateur.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldModificationIdentifiantUtilisateurActionPerformed(evt);
-            }
-        });
-
-        jButtonValiderModificationUtilisateur.setText("Valider");
-        jButtonValiderModificationUtilisateur.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonValiderModificationUtilisateurActionPerformed(evt);
-            }
-        });
-
-        jButtonCancelModificationUtilisateur.setText("Cancel");
-        jButtonCancelModificationUtilisateur.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCancelModificationUtilisateurActionPerformed(evt);
-            }
-        });
-
-        jLabelModificationPrenomUtilisateur.setText("Prenom");
-
-        jLabelModificationNomUtilisateur.setText("Nom");
-
-        jLabelModificationIdentifiantUtilisateur.setText("Identifiant");
-
-        jLabelModificationPasswordUtilisateur.setText("Mot de Passe");
-
-        jLabelTitreModificationUtilisateur.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabelTitreModificationUtilisateur.setText("Modification Utilisateur");
-
-        javax.swing.GroupLayout jPanelModificationUtilisateurLayout = new javax.swing.GroupLayout(jPanelModificationUtilisateur);
-        jPanelModificationUtilisateur.setLayout(jPanelModificationUtilisateurLayout);
-        jPanelModificationUtilisateurLayout.setHorizontalGroup(
-            jPanelModificationUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelModificationUtilisateurLayout.createSequentialGroup()
-                .addGap(200, 200, 200)
-                .addComponent(jButtonValiderModificationUtilisateur)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonCancelModificationUtilisateur)
-                .addGap(200, 200, 200))
-            .addGroup(jPanelModificationUtilisateurLayout.createSequentialGroup()
-                .addGroup(jPanelModificationUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelModificationUtilisateurLayout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addGroup(jPanelModificationUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelModificationPrenomUtilisateur)
-                            .addComponent(jTextFieldModificationIdentifiantUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldModificationPrenomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldModificationNomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldPasswordModificationUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelModificationPasswordUtilisateur)
-                            .addComponent(jLabelModificationIdentifiantUtilisateur)
-                            .addComponent(jLabelModificationNomUtilisateur)))
-                    .addGroup(jPanelModificationUtilisateurLayout.createSequentialGroup()
-                        .addGap(250, 250, 250)
-                        .addComponent(jLabelTitreModificationUtilisateur)))
-                .addContainerGap(150, Short.MAX_VALUE))
-        );
-        jPanelModificationUtilisateurLayout.setVerticalGroup(
-            jPanelModificationUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelModificationUtilisateurLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jLabelTitreModificationUtilisateur)
-                .addGap(39, 39, 39)
-                .addComponent(jLabelModificationPrenomUtilisateur)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldModificationPrenomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(jLabelModificationNomUtilisateur)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldModificationNomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(jLabelModificationIdentifiantUtilisateur)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldModificationIdentifiantUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(jLabelModificationPasswordUtilisateur)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldPasswordModificationUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
-                .addGroup(jPanelModificationUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonValiderModificationUtilisateur)
-                    .addComponent(jButtonCancelModificationUtilisateur))
-                .addGap(43, 43, 43))
-        );
-
-        add(jPanelModificationUtilisateur, "cardModificationUtilisateur");
+        add(jPanelEditUtilisateur, "cardAjoutUtilisateur");
 
         jPanelListeUtilisateur.setBackground(new java.awt.Color(242, 0, 242));
         jPanelListeUtilisateur.setPreferredSize(new java.awt.Dimension(800, 600));
@@ -343,86 +227,53 @@ public class UtilisateurView extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonModifierListeUtilisateurActionPerformed
 
-    private void jTextFieldModificationPrenomUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldModificationPrenomUtilisateurActionPerformed
+    private void jTextFieldEditPrenomUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEditPrenomUtilisateurActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldModificationPrenomUtilisateurActionPerformed
+    }//GEN-LAST:event_jTextFieldEditPrenomUtilisateurActionPerformed
 
-    private void jButtonCancelModificationUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelModificationUtilisateurActionPerformed
-    useLayout("cardListeUtilisateur");  
-    }//GEN-LAST:event_jButtonCancelModificationUtilisateurActionPerformed
-
-    private void jTextFieldModificationNomUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldModificationNomUtilisateurActionPerformed
+    private void jTextFieldEditNomUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEditNomUtilisateurActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldModificationNomUtilisateurActionPerformed
+    }//GEN-LAST:event_jTextFieldEditNomUtilisateurActionPerformed
 
-    private void jTextFieldModificationIdentifiantUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldModificationIdentifiantUtilisateurActionPerformed
+    private void jTextFieldEditIdentifiantUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEditIdentifiantUtilisateurActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldModificationIdentifiantUtilisateurActionPerformed
+    }//GEN-LAST:event_jTextFieldEditIdentifiantUtilisateurActionPerformed
 
-    private void jButtonValiderModificationUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValiderModificationUtilisateurActionPerformed
-    useLayout("cardListeUtilisateur");
-    // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonValiderModificationUtilisateurActionPerformed
-
-    private void jTextFieldAjoutPrenomUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAjoutPrenomUtilisateurActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldAjoutPrenomUtilisateurActionPerformed
-
-    private void jTextFieldAjoutNomUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAjoutNomUtilisateurActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldAjoutNomUtilisateurActionPerformed
-
-    private void jTextFieldAjoutIdentifiantUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAjoutIdentifiantUtilisateurActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldAjoutIdentifiantUtilisateurActionPerformed
-
-    private void jButtonValiderAjoutUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValiderAjoutUtilisateurActionPerformed
+    private void jButtonValiderEditUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValiderEditUtilisateurActionPerformed
     useLayout("cardListeUtilisateur");
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonValiderAjoutUtilisateurActionPerformed
+    }//GEN-LAST:event_jButtonValiderEditUtilisateurActionPerformed
 
-    private void jButtonCancelAjoutUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelAjoutUtilisateurActionPerformed
+    private void jButtonCancelEditUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelEditUtilisateurActionPerformed
     useLayout("cardListeUtilisateur");   
-    }//GEN-LAST:event_jButtonCancelAjoutUtilisateurActionPerformed
+    }//GEN-LAST:event_jButtonCancelEditUtilisateurActionPerformed
 
     private void jButtonAjouterListeUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAjouterListeUtilisateurActionPerformed
-        useLayout("cardAjoutUtilisateur");
+        useLayout("cardEdittUtilisateur");
 // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAjouterListeUtilisateurActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAjouterListeUtilisateur;
-    private javax.swing.JButton jButtonCancelAjoutUtilisateur;
-    private javax.swing.JButton jButtonCancelModificationUtilisateur;
+    private javax.swing.JButton jButtonCancelEditUtilisateur;
     private javax.swing.JButton jButtonModifierListeUtilisateur;
     private javax.swing.JButton jButtonSupprimerListeUtilisateur;
-    private javax.swing.JButton jButtonValiderAjoutUtilisateur;
-    private javax.swing.JButton jButtonValiderModificationUtilisateur;
-    private javax.swing.JLabel jLabelAjoutIdentifiantUtilisateur;
-    private javax.swing.JLabel jLabelAjoutNomUtilisateur;
-    private javax.swing.JLabel jLabelAjoutPasswordUtilisateur;
-    private javax.swing.JLabel jLabelAjoutPrenomUtilisateur;
-    private javax.swing.JLabel jLabelModificationIdentifiantUtilisateur;
-    private javax.swing.JLabel jLabelModificationNomUtilisateur;
-    private javax.swing.JLabel jLabelModificationPasswordUtilisateur;
-    private javax.swing.JLabel jLabelModificationPrenomUtilisateur;
-    private javax.swing.JLabel jLabelTitreAjoutUtilisateur;
+    private javax.swing.JButton jButtonValiderEditUtilisateur;
+    private javax.swing.JLabel jLabelEditIdentifiantUtilisateur;
+    private javax.swing.JLabel jLabelEditNomUtilisateur;
+    private javax.swing.JLabel jLabelEditPasswordUtilisateur;
+    private javax.swing.JLabel jLabelEditPrenomUtilisateur;
+    private javax.swing.JLabel jLabelTitreEditUtilisateur;
     private javax.swing.JLabel jLabelTitreListeUtilisateur;
-    private javax.swing.JLabel jLabelTitreModificationUtilisateur;
     private javax.swing.JList<String> jListUtilisateur;
-    private javax.swing.JPanel jPanelAjoutUtilisateur;
+    private javax.swing.JPanel jPanelEditUtilisateur;
     private javax.swing.JPanel jPanelListeUtilisateur;
-    private javax.swing.JPanel jPanelModificationUtilisateur;
     private javax.swing.JScrollPane jScrollPaneUtilisateur;
-    private javax.swing.JTextField jTextFieldAjoutIdentifiantUtilisateur;
-    private javax.swing.JTextField jTextFieldAjoutNomUtilisateur;
-    private javax.swing.JTextField jTextFieldAjoutPrenomUtilisateur;
-    private javax.swing.JTextField jTextFieldModificationIdentifiantUtilisateur;
-    private javax.swing.JTextField jTextFieldModificationNomUtilisateur;
-    private javax.swing.JTextField jTextFieldModificationPrenomUtilisateur;
-    private javax.swing.JTextField jTextFieldPasswordAjoutUtilisateur;
-    private javax.swing.JTextField jTextFieldPasswordModificationUtilisateur;
+    private javax.swing.JTextField jTextFieldEditIdentifiantUtilisateur;
+    private javax.swing.JTextField jTextFieldEditNomUtilisateur;
+    private javax.swing.JTextField jTextFieldEditPrenomUtilisateur;
+    private javax.swing.JTextField jTextFieldPasswordEditUtilisateur;
     // End of variables declaration//GEN-END:variables
 
     public void useLayout(String cardtext){
