@@ -41,9 +41,9 @@ public class CommuneListModel extends AbstractListModel {
         
         Commune commune = new Commune(i, nom, codePostal, description);
         if (i == 0) {
-            //ComDao.insert(commune);
+            ComDao.insert(commune);
         } else {
-            //ComDao.update(commune);
+            ComDao.update(commune);
         }
     }
     

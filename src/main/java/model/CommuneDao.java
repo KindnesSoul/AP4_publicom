@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  * @author m.arakelian
  */
 public class CommuneDao {
-    
+
     private Connection connexion;
 
     public CommuneDao() throws Exception {
@@ -52,5 +52,32 @@ public class CommuneDao {
         }
         return liste;
     }
-    
+
+    public void insert(Commune commune) {
+        String query = "INSERT INTO commune (nom, codePostal, description) VALUES (?, ?, ?)";
+
+        try (PreparedStatement ps = this.connexion.prepareStatement(query)) {
+
+            ps.setString(1, commune.getNom());
+            ps.setInt(2, commune.getCodePostal());
+            ps.setString(3, commune.getDescription());
+
+            int n = ps.executeUpdate();
+
+            if (n > 0) {
+                System.out.println("Insertion réussie !");
+            } else {
+                System.out.println("Aucune ligne insérée.");
+            }
+
+        } catch (SQLException ex) {
+            System.err.println("Erreur lors de l'insertion : " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
+
+    void update(Commune commune) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

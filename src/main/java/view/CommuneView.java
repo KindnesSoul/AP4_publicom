@@ -4,6 +4,7 @@
  */
 package view;
 
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -24,16 +25,15 @@ public class CommuneView extends javax.swing.JPanel {
     private void btnValidModifActionPerfomed(ActionEvent evt) {
         listeners.firePropertyChange("validModifUser", null, null);
     }
+    
 
     public void setCommuneListModel(CommuneListModel communeListModel) {
         this.jListCommune.setModel(communeListModel);
     }
-    
+
     public CommuneView() {
         initComponents();
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -156,21 +156,18 @@ public class CommuneView extends javax.swing.JPanel {
 
         jPanelEditCommune.setPreferredSize(new java.awt.Dimension(685, 451));
 
-        jTextFieldEditDescrip.setText("...");
         jTextFieldEditDescrip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldEditDescripActionPerformed(evt);
             }
         });
 
-        jTextFieldEditCodePostal.setText("...");
         jTextFieldEditCodePostal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldEditCodePostalActionPerformed(evt);
             }
         });
 
-        jTextFieldEditNom.setText("...");
         jTextFieldEditNom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldEditNomActionPerformed(evt);
@@ -242,16 +239,12 @@ public class CommuneView extends javax.swing.JPanel {
 
         jPanelAddPanel.setPreferredSize(new java.awt.Dimension(685, 451));
 
-        jTextFieldAddDescrip.setText("...");
         jTextFieldAddDescrip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldAddDescripActionPerformed(evt);
             }
         });
 
-        jTextFieldAddCodePostal.setText("...");
-
-        jTextFieldAddNom.setText("...");
         jTextFieldAddNom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldAddNomActionPerformed(evt);
@@ -259,6 +252,11 @@ public class CommuneView extends javax.swing.JPanel {
         });
 
         jButtonAddValider.setText("Valider");
+        jButtonAddValider.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddValiderActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Description :");
 
@@ -274,30 +272,29 @@ public class CommuneView extends javax.swing.JPanel {
         jPanelAddPanelLayout.setHorizontalGroup(
             jPanelAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelAddPanelLayout.createSequentialGroup()
+                .addGap(180, 180, 180)
                 .addGroup(jPanelAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldAddDescrip, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldAddCodePostal, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addComponent(jTextFieldAddNom, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel7)
                     .addGroup(jPanelAddPanelLayout.createSequentialGroup()
-                        .addGap(178, 178, 178)
-                        .addGroup(jPanelAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldAddDescrip, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldAddCodePostal, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)
-                            .addComponent(jTextFieldAddNom, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel7)
-                            .addGroup(jPanelAddPanelLayout.createSequentialGroup()
-                                .addGap(95, 95, 95)
-                                .addComponent(jButtonAddValider, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanelAddPanelLayout.createSequentialGroup()
-                        .addGap(214, 214, 214)
-                        .addComponent(jLabelModifCommune1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(241, Short.MAX_VALUE))
+                        .addGap(95, 95, 95)
+                        .addComponent(jButtonAddValider, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(193, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAddPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelModifCommune1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(213, 213, 213))
         );
         jPanelAddPanelLayout.setVerticalGroup(
             jPanelAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelAddPanelLayout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(19, 19, 19)
                 .addComponent(jLabelModifCommune1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldAddNom, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -311,10 +308,10 @@ public class CommuneView extends javax.swing.JPanel {
                 .addComponent(jTextFieldAddDescrip, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
                 .addComponent(jButtonAddValider, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
-        add(jPanelAddPanel, "card4");
+        add(jPanelAddPanel, "cardAjoutCommune");
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSupprActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSupprActionPerformed
@@ -326,7 +323,7 @@ public class CommuneView extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonModifActionPerformed
 
     private void jButtonAjoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAjoutActionPerformed
-        // TODO add your handling code here:
+        useLayout("cardAjoutCommune");
     }//GEN-LAST:event_jButtonAjoutActionPerformed
 
     private void jButtonVoirEtudiantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoirEtudiantActionPerformed
@@ -352,6 +349,10 @@ public class CommuneView extends javax.swing.JPanel {
     private void jTextFieldAddNomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAddNomActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldAddNomActionPerformed
+
+    private void jButtonAddValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddValiderActionPerformed
+        listeners.firePropertyChange("validNouvelleCommune", null, null);
+    }//GEN-LAST:event_jButtonAddValiderActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -385,14 +386,19 @@ public class CommuneView extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     public String getNom() {
-        return this.jTextFieldAddNom.getText(); 
+        return this.jTextFieldAddNom.getText();
     }
 
     public int getCodePostal() {
-        return Integer.parseInt(this.jTextFieldAddCodePostal.getText()); 
+        return Integer.parseInt(this.jTextFieldAddCodePostal.getText());
     }
 
     public String getDescription() {
         return this.jTextFieldAddDescrip.getText();
+    }
+
+    public void useLayout(String cardtext) {
+        CardLayout card = (CardLayout) this.getLayout();
+        card.show(this, cardtext);
     }
 }

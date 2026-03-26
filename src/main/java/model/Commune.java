@@ -56,7 +56,7 @@ public class Commune {
 
     @Override
     public String toString() {
-        return "" + nom + " - " + codePostal + " - " + description ;
+        return "" + nom + "  -  " + codePostal + "  -  " + description ;
     }
     
 }

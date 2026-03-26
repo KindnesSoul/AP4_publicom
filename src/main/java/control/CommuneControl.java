@@ -39,7 +39,7 @@ public class CommuneControl implements PropertyChangeListener {
         switch(evt.getPropertyName()){
             case "validModifUser":
                 break;
-            case "validNouveauUser":
+            case "validNouvelleCommune":
                 String nom = this.communeview.getNom();
                 int codePostal = this.communeview.getCodePostal();
                 String description = this.communeview.getDescription();
