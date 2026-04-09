@@ -76,8 +76,50 @@ public class CommuneDao {
         }
     }
 
-    void update(Commune commune) {
-       
-    }
+    public void update(Commune commune) {
+        String query = "UPDATE commune SET nom = ?, codePostal = ?, description = ? WHERE id = ?";
 
+        try (PreparedStatement ps = this.connexion.prepareStatement(query)) {
+
+            ps.setString(1, commune.getNom());
+            ps.setInt(2, commune.getCodePostal());
+            ps.setString(3, commune.getDescription());
+            ps.setInt(4, commune.getId());
+
+            int n = ps.executeUpdate();
+
+            if (n > 0) {
+                System.out.println("Update réussie !");
+            } else {
+                System.out.println("Aucune ligne update.");
+            }
+
+        } catch (SQLException ex) {
+            System.err.println("Erreur lors de l'update : " + ex.getMessage());
+            ex.printStackTrace();
+       
+        }
+    }
+    
+    public void delete(int id) {
+        
+        System.out.println(id);
+        String query = "DELETE FROM commune WHERE commune.ID = (?)";
+
+        try (PreparedStatement ps = this.connexion.prepareStatement(query)) {
+
+            ps.setInt(1, id);
+            int n = ps.executeUpdate();
+
+            if (n > 0) {
+                System.out.println("delete réussie !");
+            } else {
+                System.out.println("Aucune ligne delete.");
+            }
+
+        } catch (SQLException ex) {
+            System.err.println("Erreur lors de l'insertion : " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
 }

@@ -5,6 +5,7 @@
 package view;
 
 import java.awt.CardLayout;
+import model.Commune;
 
 /**
  *
@@ -162,5 +163,14 @@ public class MainView extends javax.swing.JFrame {
 
     public UtilisateurView getUtilisateurView() {
         return this.utilisateurView;
+    }
+    
+    public void showUserViewForCommune(Commune commune) {
+        //this.utilisateurView.setCommune(commune);
+        CardLayout card = (CardLayout) MainPanel.getLayout();
+        card.show(MainPanel, "cardViewUtilisateur");
+
+        card = (CardLayout) utilisateurView.getLayout();
+        card.show(utilisateurView, "cardListeUtilisateur");
     }
 }

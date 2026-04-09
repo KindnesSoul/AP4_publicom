@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import javax.swing.JOptionPane;
+import model.Commune;
 import model.CommuneListModel;
 
 /**
@@ -19,24 +20,18 @@ public class CommuneView extends javax.swing.JPanel {
 
     private PropertyChangeSupport listeners = new PropertyChangeSupport(this);
     private CommuneEditPanel communeEditPanel = new CommuneEditPanel();
-    
-    
 
     @Override
     public void addPropertyChangeListener(PropertyChangeListener l) {
         listeners.addPropertyChangeListener(l);
     }
-    
 
     public void setCommuneListModel(CommuneListModel communeListModel) {
         this.jListCommune.setModel(communeListModel);
     }
-    
-    
 
     public CommuneView() {
         initComponents();
-
 
     }
 
@@ -135,17 +130,55 @@ public class CommuneView extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSupprActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSupprActionPerformed
-        // TODO add your handling code here:
+
+        int result = JOptionPane.showConfirmDialog(this, "Etes vous certain de supprimer cette commune ?");
+        if (result == JOptionPane.OK_OPTION) {
+            Commune selected = getSelectedCommune();
+            if (selected != null) {
+                listeners.firePropertyChange("deleteSelectedCommune", null, selected);
+            } else {
+                JOptionPane.showMessageDialog(this, "Veuillez sélectionner une commune avant de supprimer.");
+            }
+        }
     }//GEN-LAST:event_jButtonSupprActionPerformed
 
     private void jButtonVoirUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoirUtilisateurActionPerformed
-        // envoi notif "vueUtilisateur"
-       
         
+        Commune selected = getSelectedCommune();
+        if (selected != null) {
+            MainView mainView = (MainView) this.getTopLevelAncestor();
+            mainView.showUserViewForCommune(selected);
+        } else {
+            JOptionPane.showMessageDialog(this, "Veuillez sélectionner une commune pour voir ses utilisateurs.");
+        }
+
+
     }//GEN-LAST:event_jButtonVoirUtilisateurActionPerformed
 
     private void jButtonModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModifActionPerformed
-        // TODO add your handling code here:
+        Commune selected = getSelectedCommune();
+        if (selected != null) {
+            communeEditPanel.setNom(selected.getNom());
+            communeEditPanel.setCodePostal(selected.getCodePostal());
+            communeEditPanel.setDescription(selected.getDescription());
+
+            String[] options = {"Valider", "Annuler"};
+            int result = JOptionPane.showOptionDialog(
+                    this,
+                    communeEditPanel,
+                    "Modifier la commune",
+                    JOptionPane.OK_CANCEL_OPTION,
+                    JOptionPane.PLAIN_MESSAGE,
+                    null,
+                    options,
+                    options[0]
+            );
+            if (result == JOptionPane.OK_OPTION) {
+                listeners.firePropertyChange("validModifCommune", null, selected);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Veuillez sélectionner une commune avant de modifier.");
+        }
     }//GEN-LAST:event_jButtonModifActionPerformed
 
     private void jButtonAjoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAjoutActionPerformed
@@ -176,7 +209,7 @@ public class CommuneView extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 
-    public String getNom(){
+    public String getNom() {
         return this.communeEditPanel.getNom();
     }
 
@@ -187,7 +220,21 @@ public class CommuneView extends javax.swing.JPanel {
     public String getDescription() {
         return this.communeEditPanel.getDescription();
     }
-    
+
+    public Commune getSelectedCommune() {
+        Object value = this.jListCommune.getSelectedValue();
+        if (value instanceof Commune) {
+            return (Commune) value;
+        }
+        return null;
+    }
+
+    public Integer getSelectedCommuneId() {
+        return this.jListCommune.getSelectedIndex();
+        //Commune selected = getSelectedCommune();
+        //return selected != null ? selected.getId() : null;
+    }
+
     public void useLayout(String cardtext) {
         CardLayout card = (CardLayout) this.getLayout();
         card.show(this, cardtext);
