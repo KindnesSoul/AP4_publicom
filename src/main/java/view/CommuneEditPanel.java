@@ -135,4 +135,16 @@ public class CommuneEditPanel extends javax.swing.JPanel {
     public String getDescription() {
         return this.jTextFieldEditDescrip.getText();
     }
+
+    public void setNom(String nom) {
+        this.jTextFieldEditNom.setText(nom);
+    }
+
+    public void setCodePostal(int codePostal) {
+        this.jTextFieldEditCodePostal.setText(String.valueOf(codePostal));
+    }
+
+    public void setDescription(String description) {
+        this.jTextFieldEditDescrip.setText(description);
+    }
 }

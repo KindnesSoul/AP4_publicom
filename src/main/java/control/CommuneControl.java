@@ -38,7 +38,15 @@ public class CommuneControl implements PropertyChangeListener {
 
     public void propertyChange(PropertyChangeEvent evt) {
         switch (evt.getPropertyName()) {
-            case "validModifUser":
+            case "validModifCommune":
+                Commune selected = (Commune) evt.getNewValue();  
+                if (selected != null) {
+                    String nom = this.communeview.getNom();
+                    int codePostal = this.communeview.getCodePostal();
+                    String description = this.communeview.getDescription();
+                    this.communeListModel.save(selected.getId(), nom, codePostal, description);
+                    refreshCommuneView();
+                }
                 break;
             case "validNouvelleCommune":
                 String nom = this.communeview.getNom();
@@ -50,7 +58,7 @@ public class CommuneControl implements PropertyChangeListener {
             case "deleteSelectedCommune":
                 int index = this.communeview.getSelectedCommuneId();
                 Commune commune = this.communeListModel.getElementAt(index);
-                int id =commune.getId();
+                int id = commune.getId();
                 this.communeListModel.suppr(id);
                 refreshCommuneView();
                 break;
