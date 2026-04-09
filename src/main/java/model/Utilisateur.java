@@ -11,6 +11,7 @@ package model;
 public class Utilisateur {
     private int id ;
     private int idUtilisateurCommune;
+
     private String prenom;
     private String nom;
     private String identifiant;
@@ -25,7 +26,13 @@ public class Utilisateur {
         this.motdepasse = motdepasse;
     }
 
-    
+    public int getId() {
+        return id;
+    }
+
+    public int getIdUtilisateurCommune() {
+        return idUtilisateurCommune;
+    }
     
     public String getPrenom() {
         return prenom;

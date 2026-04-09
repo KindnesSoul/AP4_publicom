@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JTextField;
+
 /**
  *
  * @author m.arakelian
@@ -136,4 +138,29 @@ public class UtilisateurEditPanel extends javax.swing.JPanel {
     private javax.swing.JTextField jTextFieldEditPrenomUtilisateur;
     private javax.swing.JTextField jTextFieldPasswordEditUtilisateur;
     // End of variables declaration//GEN-END:variables
+
+    public void setEditPanel(String prenom, String nom, String login, String password) {
+        this.jTextFieldEditNomUtilisateur.setText(nom);
+        this.jTextFieldEditPrenomUtilisateur.setText(prenom);
+        this.jTextFieldEditIdentifiantUtilisateur.setText(login);
+        this.jTextFieldPasswordEditUtilisateur.setText(password);
+    }
+
+    public String getLoginUtilisateur() {
+        return this.jTextFieldEditIdentifiantUtilisateur.getText();
+    }
+
+    public String getNomUtilisateur() {
+        return this.jTextFieldEditNomUtilisateur.getText();
+    }
+
+    public String getPrenomUtilisateur() {
+        return this.jTextFieldEditPrenomUtilisateur.getText();
+    }
+
+    public String getPasswordUtilisateur() {
+        return this.jTextFieldPasswordEditUtilisateur.getText();
+    }
+    
+   
 }

@@ -43,5 +43,23 @@ public class UtilisateurDAO {
         }
         return(listeUtilisateur);
     }
+
+    void updateUtilisateur(int id,int idUtilisateurCommune, String nom, String prenom, String login, String password) {
+        String SQL =("UPDATE `utilisateur` SET `ID_UTILISATEURCOMMUNE` = (?), `PRENOM` = (?), `NOM` = (?), `IDENTIFIANT` =(?), `MOTDEPASSE` = (?) WHERE `utilisateur`.`ID` = (?);");
+        try (PreparedStatement preparedStatement = connexion.prepareStatement(SQL)) {
+            preparedStatement.setInt(1,idUtilisateurCommune);
+            preparedStatement.setString(2,prenom);
+            preparedStatement.setString(3,nom);
+            preparedStatement.setString(4,login);
+            preparedStatement.setString(5,password);
+            preparedStatement.setInt(6,id);
+            preparedStatement.executeUpdate();
+            
+        }catch (SQLException ex){
+            Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+    }
+    
    
 }

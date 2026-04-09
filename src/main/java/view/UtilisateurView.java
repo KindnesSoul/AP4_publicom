@@ -7,6 +7,7 @@ package view;
 import java.awt.CardLayout;
 import java.beans.PropertyChangeSupport;
 import java.beans.PropertyChangeListener;
+import javax.swing.JOptionPane;
 import model.UtilisateurListModel;
 
 /**
@@ -16,10 +17,10 @@ import model.UtilisateurListModel;
 public class UtilisateurView extends javax.swing.JPanel {
 
     private PropertyChangeSupport listeners = new PropertyChangeSupport(this);
-
+    private UtilisateurEditPanel utilisateurEditPanel= new UtilisateurEditPanel();
     
     public UtilisateurView() {
-        initComponents();
+        initComponents(); 
     }
     
     @Override
@@ -110,10 +111,38 @@ public class UtilisateurView extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonModifierListeUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModifierListeUtilisateurActionPerformed
+        listeners.firePropertyChange("ModificationUtilisateur", null, null);
+        String[] options = {"Valider", "Annuler"};
+        int result = JOptionPane.showOptionDialog(
+                this,
+                this.utilisateurEditPanel,
+                "Ajout nouvelle utilisateur",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                options,
+                options[0]
+        );
+        if (result == JOptionPane.OK_OPTION) {
+            listeners.firePropertyChange("ConfirmModificationUtilisateur", null, null);
+        }
     }//GEN-LAST:event_jButtonModifierListeUtilisateurActionPerformed
 
     private void jButtonAjouterListeUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAjouterListeUtilisateurActionPerformed
-        // OptionDialog => EditPanel
+        String[] options = {"Valider", "Annuler"};
+        int result = JOptionPane.showOptionDialog(
+                this,
+                this.utilisateurEditPanel,
+                "Ajout nouvelle utilisateur",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                options,
+                options[0]
+        );
+        if (result == JOptionPane.OK_OPTION) {
+            listeners.firePropertyChange("", null, null);
+        }
     }//GEN-LAST:event_jButtonAjouterListeUtilisateurActionPerformed
 
 
@@ -128,5 +157,24 @@ public class UtilisateurView extends javax.swing.JPanel {
 
     public void setUtilisateurListModel(UtilisateurListModel utilisateurListModel) {
         this.jListUtilisateur.setModel(utilisateurListModel);
+    }
+    public int getUtilisateurIndex(){
+        return this.jListUtilisateur.getSelectedIndex();    
+    }
+    public void accesSetEditPanel(String prenom,String nom, String login,String password){
+        this.utilisateurEditPanel.setEditPanel(prenom,nom,login,password);
+    
+    }
+    public String accessGetNomUtilisateur (){
+        return(this.utilisateurEditPanel.getNomUtilisateur());
+    }
+    public String accessGetPrenomUtilisateur (){
+        return this.utilisateurEditPanel.getPrenomUtilisateur();
+    }
+    public String accessGetLoginUtilisateur (){
+        return this.utilisateurEditPanel.getLoginUtilisateur();
+    }
+    public String accessGetPasswordUtilisateur (){
+        return this.utilisateurEditPanel.getPasswordUtilisateur();
     }
 }
