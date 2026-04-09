@@ -79,5 +79,28 @@ public class CommuneDao {
     void update(Commune commune) {
        
     }
+    
+    void delete(int id) {
+        
+        System.out.println(id);
+        String query = "DELETE FROM commune WHERE commune.ID = (?)";
+
+        try (PreparedStatement ps = this.connexion.prepareStatement(query)) {
+
+            ps.setInt(1, id);
+            int n = ps.executeUpdate();
+
+            if (n > 0) {
+                System.out.println("delete réussie !");
+            } else {
+                System.out.println("Aucune ligne delete.");
+            }
+
+        } catch (SQLException ex) {
+            System.err.println("Erreur lors de l'insertion : " + ex.getMessage());
+            ex.printStackTrace();
+        }
+
+    }
 
 }

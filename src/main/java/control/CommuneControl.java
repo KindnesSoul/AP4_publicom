@@ -8,6 +8,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Commune;
 import model.CommuneListModel;
 import view.CommuneView;
 import view.MainView;
@@ -44,6 +45,13 @@ public class CommuneControl implements PropertyChangeListener {
                 int codePostal = this.communeview.getCodePostal();
                 String description = this.communeview.getDescription();
                 this.communeListModel.save(0, nom, codePostal, description);
+                refreshCommuneView();
+                break;
+            case "deleteSelectedCommune":
+                int index = this.communeview.getSelectedCommuneId();
+                Commune commune = this.communeListModel.getElementAt(index);
+                int id =commune.getId();
+                this.communeListModel.suppr(id);
                 refreshCommuneView();
                 break;
         }

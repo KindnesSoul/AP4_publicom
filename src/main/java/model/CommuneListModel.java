@@ -47,4 +47,9 @@ public class CommuneListModel extends AbstractListModel {
         }
     }
     
+    public void suppr(int id) {
+        
+        ComDao.delete(id);
+    }
+    
 }

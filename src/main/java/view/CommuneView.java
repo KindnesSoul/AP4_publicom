@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import javax.swing.JOptionPane;
+import model.Commune;
 import model.CommuneListModel;
 
 /**
@@ -135,13 +136,22 @@ public class CommuneView extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSupprActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSupprActionPerformed
-        // TODO add your handling code here:
+        
+        int result = JOptionPane.showConfirmDialog(this, "Etes vous certain de supprimer cette commune ?");
+        if (result == JOptionPane.OK_OPTION) {
+            Commune selected = getSelectedCommune();
+            if (selected != null) {
+                listeners.firePropertyChange("deleteSelectedCommune", null, selected);
+            } else {
+                JOptionPane.showMessageDialog(this, "Veuillez sélectionner une commune avant de supprimer.");
+            }
+        }
     }//GEN-LAST:event_jButtonSupprActionPerformed
 
     private void jButtonVoirUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoirUtilisateurActionPerformed
         // envoi notif "vueUtilisateur"
-       
-        
+
+
     }//GEN-LAST:event_jButtonVoirUtilisateurActionPerformed
 
     private void jButtonModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModifActionPerformed
@@ -186,6 +196,20 @@ public class CommuneView extends javax.swing.JPanel {
 
     public String getDescription() {
         return this.communeEditPanel.getDescription();
+    }
+
+    public Commune getSelectedCommune() {
+        Object value = this.jListCommune.getSelectedValue();
+        if(value instanceof Commune) {
+            return (Commune) value;
+        }
+        return null;
+    }
+
+    public Integer getSelectedCommuneId() {
+        return this.jListCommune.getSelectedIndex();
+        //Commune selected = getSelectedCommune();
+        //return selected != null ? selected.getId() : null;
     }
     
     public void useLayout(String cardtext) {
