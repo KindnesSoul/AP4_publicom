@@ -36,134 +36,12 @@ public class UtilisateurView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelEditUtilisateur = new javax.swing.JPanel();
-        jLabelTitreEditUtilisateur = new javax.swing.JLabel();
-        jLabelEditPrenomUtilisateur = new javax.swing.JLabel();
-        jTextFieldEditPrenomUtilisateur = new javax.swing.JTextField();
-        jLabelEditNomUtilisateur = new javax.swing.JLabel();
-        jTextFieldEditNomUtilisateur = new javax.swing.JTextField();
-        jLabelEditIdentifiantUtilisateur = new javax.swing.JLabel();
-        jTextFieldEditIdentifiantUtilisateur = new javax.swing.JTextField();
-        jLabelEditPasswordUtilisateur = new javax.swing.JLabel();
-        jTextFieldPasswordEditUtilisateur = new javax.swing.JTextField();
-        jButtonValiderEditUtilisateur = new javax.swing.JButton();
-        jButtonCancelEditUtilisateur = new javax.swing.JButton();
-        jPanelListeUtilisateur = new javax.swing.JPanel();
         jScrollPaneUtilisateur = new javax.swing.JScrollPane();
         jListUtilisateur = new javax.swing.JList<>();
         jLabelTitreListeUtilisateur = new javax.swing.JLabel();
         jButtonAjouterListeUtilisateur = new javax.swing.JButton();
         jButtonModifierListeUtilisateur = new javax.swing.JButton();
         jButtonSupprimerListeUtilisateur = new javax.swing.JButton();
-
-        setLayout(new java.awt.CardLayout());
-
-        jPanelEditUtilisateur.setBackground(new java.awt.Color(242, 242, 0));
-        jPanelEditUtilisateur.setPreferredSize(new java.awt.Dimension(800, 600));
-
-        jLabelTitreEditUtilisateur.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabelTitreEditUtilisateur.setText("Ajout Utilisateur");
-
-        jLabelEditPrenomUtilisateur.setText("Prenom");
-
-        jTextFieldEditPrenomUtilisateur.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldEditPrenomUtilisateurActionPerformed(evt);
-            }
-        });
-
-        jLabelEditNomUtilisateur.setText("Nom");
-
-        jTextFieldEditNomUtilisateur.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldEditNomUtilisateurActionPerformed(evt);
-            }
-        });
-
-        jLabelEditIdentifiantUtilisateur.setText("Identifiant");
-
-        jTextFieldEditIdentifiantUtilisateur.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldEditIdentifiantUtilisateurActionPerformed(evt);
-            }
-        });
-
-        jLabelEditPasswordUtilisateur.setText("Mot de Passe");
-
-        jButtonValiderEditUtilisateur.setText("Valider");
-        jButtonValiderEditUtilisateur.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonValiderEditUtilisateurActionPerformed(evt);
-            }
-        });
-
-        jButtonCancelEditUtilisateur.setText("Cancel");
-        jButtonCancelEditUtilisateur.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCancelEditUtilisateurActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanelEditUtilisateurLayout = new javax.swing.GroupLayout(jPanelEditUtilisateur);
-        jPanelEditUtilisateur.setLayout(jPanelEditUtilisateurLayout);
-        jPanelEditUtilisateurLayout.setHorizontalGroup(
-            jPanelEditUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelEditUtilisateurLayout.createSequentialGroup()
-                .addGap(200, 200, 200)
-                .addComponent(jButtonValiderEditUtilisateur)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonCancelEditUtilisateur)
-                .addGap(200, 200, 200))
-            .addGroup(jPanelEditUtilisateurLayout.createSequentialGroup()
-                .addGroup(jPanelEditUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelEditUtilisateurLayout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addGroup(jPanelEditUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelEditPrenomUtilisateur)
-                            .addComponent(jTextFieldEditIdentifiantUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldEditPrenomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldEditNomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldPasswordEditUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelEditPasswordUtilisateur)
-                            .addComponent(jLabelEditIdentifiantUtilisateur)
-                            .addComponent(jLabelEditNomUtilisateur)))
-                    .addGroup(jPanelEditUtilisateurLayout.createSequentialGroup()
-                        .addGap(250, 250, 250)
-                        .addComponent(jLabelTitreEditUtilisateur)))
-                .addContainerGap(150, Short.MAX_VALUE))
-        );
-        jPanelEditUtilisateurLayout.setVerticalGroup(
-            jPanelEditUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelEditUtilisateurLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jLabelTitreEditUtilisateur)
-                .addGap(39, 39, 39)
-                .addComponent(jLabelEditPrenomUtilisateur)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldEditPrenomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(jLabelEditNomUtilisateur)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldEditNomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(jLabelEditIdentifiantUtilisateur)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldEditIdentifiantUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(jLabelEditPasswordUtilisateur)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldPasswordEditUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
-                .addGroup(jPanelEditUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonValiderEditUtilisateur)
-                    .addComponent(jButtonCancelEditUtilisateur))
-                .addGap(43, 43, 43))
-        );
-
-        add(jPanelEditUtilisateur, "cardEditUtilisateur");
-
-        jPanelListeUtilisateur.setBackground(new java.awt.Color(242, 0, 242));
-        jPanelListeUtilisateur.setPreferredSize(new java.awt.Dimension(800, 600));
 
         jListUtilisateur.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -192,102 +70,61 @@ public class UtilisateurView extends javax.swing.JPanel {
         jButtonSupprimerListeUtilisateur.setText("Supprimer");
         jButtonSupprimerListeUtilisateur.setToolTipText("");
 
-        javax.swing.GroupLayout jPanelListeUtilisateurLayout = new javax.swing.GroupLayout(jPanelListeUtilisateur);
-        jPanelListeUtilisateur.setLayout(jPanelListeUtilisateurLayout);
-        jPanelListeUtilisateurLayout.setHorizontalGroup(
-            jPanelListeUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelListeUtilisateurLayout.createSequentialGroup()
-                .addGap(0, 202, Short.MAX_VALUE)
-                .addGroup(jPanelListeUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanelListeUtilisateurLayout.createSequentialGroup()
-                        .addComponent(jButtonModifierListeUtilisateur)
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(112, 112, 112)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButtonModifierListeUtilisateur)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonSupprimerListeUtilisateur))
+                            .addComponent(jScrollPaneUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(143, 143, 143))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabelTitreListeUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonSupprimerListeUtilisateur))
-                    .addComponent(jScrollPaneUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(201, 201, 201))
-            .addGroup(jPanelListeUtilisateurLayout.createSequentialGroup()
-                .addGap(166, 166, 166)
-                .addComponent(jLabelTitreListeUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonAjouterListeUtilisateur)
-                .addGap(58, 58, 58))
+                        .addComponent(jButtonAjouterListeUtilisateur)))
+                .addGap(112, 112, 112))
         );
-        jPanelListeUtilisateurLayout.setVerticalGroup(
-            jPanelListeUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelListeUtilisateurLayout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addGroup(jPanelListeUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAjouterListeUtilisateur)
                     .addComponent(jLabelTitreListeUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addComponent(jScrollPaneUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(80, 80, 80)
-                .addGroup(jPanelListeUtilisateurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonModifierListeUtilisateur)
                     .addComponent(jButtonSupprimerListeUtilisateur))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
-
-        add(jPanelListeUtilisateur, "cardListeUtilisateur");
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonModifierListeUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModifierListeUtilisateurActionPerformed
-    useLayout("cardEditUtilisateur");    // TODO add your handling code here:
     }//GEN-LAST:event_jButtonModifierListeUtilisateurActionPerformed
 
-    private void jTextFieldEditPrenomUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEditPrenomUtilisateurActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldEditPrenomUtilisateurActionPerformed
-
-    private void jTextFieldEditNomUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEditNomUtilisateurActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldEditNomUtilisateurActionPerformed
-
-    private void jTextFieldEditIdentifiantUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEditIdentifiantUtilisateurActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldEditIdentifiantUtilisateurActionPerformed
-
-    private void jButtonValiderEditUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValiderEditUtilisateurActionPerformed
-    useLayout("cardListeUtilisateur");
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonValiderEditUtilisateurActionPerformed
-
-    private void jButtonCancelEditUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelEditUtilisateurActionPerformed
-    useLayout("cardListeUtilisateur");   
-    }//GEN-LAST:event_jButtonCancelEditUtilisateurActionPerformed
-
     private void jButtonAjouterListeUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAjouterListeUtilisateurActionPerformed
-        useLayout("cardEditUtilisateur");
-// TODO add your handling code here:
+        // OptionDialog => EditPanel
     }//GEN-LAST:event_jButtonAjouterListeUtilisateurActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAjouterListeUtilisateur;
-    private javax.swing.JButton jButtonCancelEditUtilisateur;
     private javax.swing.JButton jButtonModifierListeUtilisateur;
     private javax.swing.JButton jButtonSupprimerListeUtilisateur;
-    private javax.swing.JButton jButtonValiderEditUtilisateur;
-    private javax.swing.JLabel jLabelEditIdentifiantUtilisateur;
-    private javax.swing.JLabel jLabelEditNomUtilisateur;
-    private javax.swing.JLabel jLabelEditPasswordUtilisateur;
-    private javax.swing.JLabel jLabelEditPrenomUtilisateur;
-    private javax.swing.JLabel jLabelTitreEditUtilisateur;
     private javax.swing.JLabel jLabelTitreListeUtilisateur;
     private javax.swing.JList<String> jListUtilisateur;
-    private javax.swing.JPanel jPanelEditUtilisateur;
-    private javax.swing.JPanel jPanelListeUtilisateur;
     private javax.swing.JScrollPane jScrollPaneUtilisateur;
-    private javax.swing.JTextField jTextFieldEditIdentifiantUtilisateur;
-    private javax.swing.JTextField jTextFieldEditNomUtilisateur;
-    private javax.swing.JTextField jTextFieldEditPrenomUtilisateur;
-    private javax.swing.JTextField jTextFieldPasswordEditUtilisateur;
     // End of variables declaration//GEN-END:variables
-
-    public void useLayout(String cardtext){
-        CardLayout card = (CardLayout)this.getLayout();
-        card.show(this, cardtext);
-    }
 
     public void setUtilisateurListModel(UtilisateurListModel utilisateurListModel) {
         this.jListUtilisateur.setModel(utilisateurListModel);

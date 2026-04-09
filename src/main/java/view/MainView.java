@@ -27,11 +27,12 @@ public class MainView extends javax.swing.JFrame {
         this.communeView = new CommuneView();
         this.MainPanel.add(communeView, "cardViewCommune");
 
-        CardLayout card = (CardLayout) MainPanel.getLayout();
-        card.show(MainPanel, "cardViewCommune");
+        CardLayout cardLayout = (CardLayout) this.MainPanel.getLayout();
+        cardLayout.show(this.MainPanel, "cardViewCommune");
+    }
 
-        card = (CardLayout) communeView.getLayout();
-        card.show(communeView, "cardLayoutCommune");
+    public CommuneView getCommuneView() {
+        return this.communeView;
     }
 
     /**
@@ -138,7 +139,7 @@ public class MainView extends javax.swing.JFrame {
 
         card = (CardLayout) utilisateurView.getLayout();
         card.show(utilisateurView, "cardEditUtilisateur");
-// TODO add your handling code here:
+
     }//GEN-LAST:event_CheckBoxUtilisateurModifActionPerformed
 
     /**
@@ -157,10 +158,6 @@ public class MainView extends javax.swing.JFrame {
     public void useLayout(String cardtext) {
         CardLayout card = (CardLayout) MainPanel.getLayout();
         card.show(MainPanel, cardtext);
-    }
-
-    public CommuneView getCommuneView() {
-        return this.communeView;
     }
 
     public UtilisateurView getUtilisateurView() {

@@ -8,6 +8,7 @@ import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import javax.swing.JOptionPane;
 import model.CommuneListModel;
 
 /**
@@ -17,22 +18,26 @@ import model.CommuneListModel;
 public class CommuneView extends javax.swing.JPanel {
 
     private PropertyChangeSupport listeners = new PropertyChangeSupport(this);
+    private CommuneEditPanel communeEditPanel = new CommuneEditPanel();
+    
+    
 
+    @Override
     public void addPropertyChangeListener(PropertyChangeListener l) {
         listeners.addPropertyChangeListener(l);
-    }
-
-    private void btnValidModifActionPerfomed(ActionEvent evt) {
-        listeners.firePropertyChange("validModifUser", null, null);
     }
     
 
     public void setCommuneListModel(CommuneListModel communeListModel) {
         this.jListCommune.setModel(communeListModel);
     }
+    
+    
 
     public CommuneView() {
         initComponents();
+
+
     }
 
     /**
@@ -44,42 +49,20 @@ public class CommuneView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelListeCommune = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
         jListCommune = new javax.swing.JList<>();
         jButtonSuppr = new javax.swing.JButton();
-        jButtonVoirEtudiant = new javax.swing.JButton();
+        jButtonVoirUtilisateur = new javax.swing.JButton();
         jButtonModif = new javax.swing.JButton();
         jButtonAjout = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jPanelEditCommune = new javax.swing.JPanel();
-        jTextFieldEditDescrip = new javax.swing.JTextField();
-        jTextFieldEditCodePostal = new javax.swing.JTextField();
-        jTextFieldEditNom = new javax.swing.JTextField();
-        jButtonEditValider = new javax.swing.JButton();
-        jButtonEditRetour = new javax.swing.JButton();
-        jLabelModifCommune = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanelAddPanel = new javax.swing.JPanel();
-        jTextFieldAddDescrip = new javax.swing.JTextField();
-        jTextFieldAddCodePostal = new javax.swing.JTextField();
-        jTextFieldAddNom = new javax.swing.JTextField();
-        jButtonAddValider = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabelModifCommune1 = new javax.swing.JLabel();
-
-        setLayout(new java.awt.CardLayout());
 
         jListCommune.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jListCommune);
+        jScrollPane2.setViewportView(jListCommune);
 
         jButtonSuppr.setText("Supprimer");
         jButtonSuppr.addActionListener(new java.awt.event.ActionListener() {
@@ -88,10 +71,10 @@ public class CommuneView extends javax.swing.JPanel {
             }
         });
 
-        jButtonVoirEtudiant.setText("voir les utilisateurs");
-        jButtonVoirEtudiant.addActionListener(new java.awt.event.ActionListener() {
+        jButtonVoirUtilisateur.setText("voir les utilisateurs");
+        jButtonVoirUtilisateur.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVoirEtudiantActionPerformed(evt);
+                jButtonVoirUtilisateurActionPerformed(evt);
             }
         });
 
@@ -109,294 +92,102 @@ public class CommuneView extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Historic", 1, 36)); // NOI18N
-        jLabel1.setText("Liste des communes");
+        jLabel5.setFont(new java.awt.Font("Segoe UI Historic", 1, 36)); // NOI18N
+        jLabel5.setText("Liste des communes");
 
-        javax.swing.GroupLayout jPanelListeCommuneLayout = new javax.swing.GroupLayout(jPanelListeCommune);
-        jPanelListeCommune.setLayout(jPanelListeCommuneLayout);
-        jPanelListeCommuneLayout.setHorizontalGroup(
-            jPanelListeCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelListeCommuneLayout.createSequentialGroup()
-                .addGroup(jPanelListeCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelListeCommuneLayout.createSequentialGroup()
-                        .addContainerGap(64, Short.MAX_VALUE)
-                        .addGroup(jPanelListeCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanelListeCommuneLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jButtonAjout, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonModif, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonSuppr, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonVoirEtudiant, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanelListeCommuneLayout.createSequentialGroup()
-                        .addGap(181, 181, 181)
-                        .addComponent(jLabel1)))
-                .addContainerGap(86, Short.MAX_VALUE))
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jButtonAjout, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonModif, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonSuppr, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonVoirUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(jLabel5)))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
-        jPanelListeCommuneLayout.setVerticalGroup(
-            jPanelListeCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelListeCommuneLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelListeCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSuppr, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonModif, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonAjout, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonVoirEtudiant, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(71, Short.MAX_VALUE))
+                    .addComponent(jButtonVoirUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
-
-        add(jPanelListeCommune, "cardLayoutCommune");
-
-        jPanelEditCommune.setPreferredSize(new java.awt.Dimension(685, 451));
-
-        jTextFieldEditDescrip.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldEditDescripActionPerformed(evt);
-            }
-        });
-
-        jTextFieldEditCodePostal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldEditCodePostalActionPerformed(evt);
-            }
-        });
-
-        jTextFieldEditNom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldEditNomActionPerformed(evt);
-            }
-        });
-
-        jButtonEditValider.setText("Valider");
-
-        jButtonEditRetour.setText("Retour");
-
-        jLabelModifCommune.setFont(new java.awt.Font("Segoe UI", 0, 28)); // NOI18N
-        jLabelModifCommune.setText("Modification commune");
-
-        jLabel2.setText("Nom :");
-
-        jLabel3.setText("Code Postal :");
-
-        jLabel4.setText("Description :");
-
-        javax.swing.GroupLayout jPanelEditCommuneLayout = new javax.swing.GroupLayout(jPanelEditCommune);
-        jPanelEditCommune.setLayout(jPanelEditCommuneLayout);
-        jPanelEditCommuneLayout.setHorizontalGroup(
-            jPanelEditCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEditCommuneLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButtonEditValider, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
-                .addComponent(jButtonEditRetour, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(231, 231, 231))
-            .addGroup(jPanelEditCommuneLayout.createSequentialGroup()
-                .addGap(179, 179, 179)
-                .addGroup(jPanelEditCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldEditDescrip, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldEditCodePostal, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldEditNom, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addGroup(jPanelEditCommuneLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jLabelModifCommune)))
-                .addContainerGap(194, Short.MAX_VALUE))
-        );
-        jPanelEditCommuneLayout.setVerticalGroup(
-            jPanelEditCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEditCommuneLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabelModifCommune, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldEditNom, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldEditCodePostal, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldEditDescrip, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
-                .addGroup(jPanelEditCommuneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonEditRetour, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonEditValider, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47))
-        );
-
-        add(jPanelEditCommune, "card3");
-
-        jPanelAddPanel.setPreferredSize(new java.awt.Dimension(685, 451));
-
-        jTextFieldAddDescrip.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldAddDescripActionPerformed(evt);
-            }
-        });
-
-        jTextFieldAddNom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldAddNomActionPerformed(evt);
-            }
-        });
-
-        jButtonAddValider.setText("Valider");
-        jButtonAddValider.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddValiderActionPerformed(evt);
-            }
-        });
-
-        jLabel5.setText("Description :");
-
-        jLabel6.setText("Nom :");
-
-        jLabel7.setText("Code Postal :");
-
-        jLabelModifCommune1.setFont(new java.awt.Font("Segoe UI", 0, 28)); // NOI18N
-        jLabelModifCommune1.setText("Ajoute commune");
-
-        javax.swing.GroupLayout jPanelAddPanelLayout = new javax.swing.GroupLayout(jPanelAddPanel);
-        jPanelAddPanel.setLayout(jPanelAddPanelLayout);
-        jPanelAddPanelLayout.setHorizontalGroup(
-            jPanelAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelAddPanelLayout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addGroup(jPanelAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldAddDescrip, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldAddCodePostal, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextFieldAddNom, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel7)
-                    .addGroup(jPanelAddPanelLayout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(jButtonAddValider, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(193, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAddPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelModifCommune1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(213, 213, 213))
-        );
-        jPanelAddPanelLayout.setVerticalGroup(
-            jPanelAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelAddPanelLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabelModifCommune1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldAddNom, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldAddCodePostal, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldAddDescrip, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(jButtonAddValider, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(106, Short.MAX_VALUE))
-        );
-
-        add(jPanelAddPanel, "cardAjoutCommune");
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSupprActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSupprActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonSupprActionPerformed
 
+    private void jButtonVoirUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoirUtilisateurActionPerformed
+        // envoi notif "vueUtilisateur"
+       
+        
+    }//GEN-LAST:event_jButtonVoirUtilisateurActionPerformed
+
     private void jButtonModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModifActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonModifActionPerformed
 
     private void jButtonAjoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAjoutActionPerformed
-        useLayout("cardAjoutCommune");
+        String[] options = {"Valider", "Annuler"};
+        int result = JOptionPane.showOptionDialog(
+                this,
+                this.communeEditPanel,
+                "Ajout nouvelle commune",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                options,
+                options[0]
+        );
+        if (result == JOptionPane.OK_OPTION) {
+            listeners.firePropertyChange("validNouvelleCommune", null, null);
+        }
     }//GEN-LAST:event_jButtonAjoutActionPerformed
-
-    private void jButtonVoirEtudiantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoirEtudiantActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonVoirEtudiantActionPerformed
-
-    private void jTextFieldEditDescripActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEditDescripActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldEditDescripActionPerformed
-
-    private void jTextFieldEditNomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEditNomActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldEditNomActionPerformed
-
-    private void jTextFieldEditCodePostalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEditCodePostalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldEditCodePostalActionPerformed
-
-    private void jTextFieldAddDescripActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAddDescripActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldAddDescripActionPerformed
-
-    private void jTextFieldAddNomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAddNomActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldAddNomActionPerformed
-
-    private void jButtonAddValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddValiderActionPerformed
-        listeners.firePropertyChange("validNouvelleCommune", null, null);
-    }//GEN-LAST:event_jButtonAddValiderActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAddValider;
     private javax.swing.JButton jButtonAjout;
-    private javax.swing.JButton jButtonEditRetour;
-    private javax.swing.JButton jButtonEditValider;
     private javax.swing.JButton jButtonModif;
     private javax.swing.JButton jButtonSuppr;
-    private javax.swing.JButton jButtonVoirEtudiant;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton jButtonVoirUtilisateur;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabelModifCommune;
-    private javax.swing.JLabel jLabelModifCommune1;
     private javax.swing.JList<String> jListCommune;
-    private javax.swing.JPanel jPanelAddPanel;
-    private javax.swing.JPanel jPanelEditCommune;
-    private javax.swing.JPanel jPanelListeCommune;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextFieldAddCodePostal;
-    private javax.swing.JTextField jTextFieldAddDescrip;
-    private javax.swing.JTextField jTextFieldAddNom;
-    private javax.swing.JTextField jTextFieldEditCodePostal;
-    private javax.swing.JTextField jTextFieldEditDescrip;
-    private javax.swing.JTextField jTextFieldEditNom;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 
-    public String getNom() {
-        return this.jTextFieldAddNom.getText();
+    public String getNom(){
+        return this.communeEditPanel.getNom();
     }
 
     public int getCodePostal() {
-        return Integer.parseInt(this.jTextFieldAddCodePostal.getText());
+        return this.communeEditPanel.getCodePostal();
     }
 
     public String getDescription() {
-        return this.jTextFieldAddDescrip.getText();
+        return this.communeEditPanel.getDescription();
     }
-
+    
     public void useLayout(String cardtext) {
         CardLayout card = (CardLayout) this.getLayout();
         card.show(this, cardtext);

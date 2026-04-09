@@ -44,7 +44,6 @@ public class CommuneControl implements PropertyChangeListener {
                 int codePostal = this.communeview.getCodePostal();
                 String description = this.communeview.getDescription();
                 this.communeListModel.save(0, nom, codePostal, description);
-                this.communeview.useLayout("cardLayoutCommune");
                 refreshCommuneView();
                 break;
         }
