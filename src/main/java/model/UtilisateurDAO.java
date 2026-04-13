@@ -24,11 +24,12 @@ public class UtilisateurDAO {
    }
 
     public ArrayList<Utilisateur> getAllUtilisateur(int idCommune) {
-        String SQL =("select * from utilisateur where "+idCommune+"=id_utilisateurcommune");
+        String SQL =("select * from utilisateur where (?)=id_utilisateurcommune");
         ArrayList<Utilisateur> listeUtilisateur = new ArrayList<Utilisateur>();
         try (PreparedStatement preparedStatement = connexion.prepareStatement(SQL)) {
-             ResultSet res = preparedStatement.executeQuery();
-             while(res.next()){
+            preparedStatement.setInt(1, idCommune);
+            ResultSet res = preparedStatement.executeQuery();
+            while(res.next()){
                 int id =res.getInt("id");
                 int idUtilisateurCommune =res.getInt("id_utilisateurcommune");
                 String prenom=res.getString("prenom");
@@ -59,6 +60,17 @@ public class UtilisateurDAO {
             Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
        
+    }
+
+    void deleteUserAt(int id) {
+        String SQL =("delete from utilisateur where (?)= id");
+        try (PreparedStatement preparedStatement = connexion.prepareStatement(SQL)) {
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+           
+        }catch (SQLException ex){
+            Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
    

@@ -24,13 +24,14 @@ public class UtilisateurControl implements PropertyChangeListener {
         this.utilisateurView=utilisateurView;
         this.utilisateurView.addPropertyChangeListener(this);
         refreshUtilisateurView();
+        
     }
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         Utilisateur user;
        switch (evt.getPropertyName()) {
-           case "ModificationUtilisateur":   
+           case "AffichageModificationUtilisateur":   
                user=getUtilisateur();
                this.utilisateurView.accesSetEditPanel(user.getPrenom(),user.getNom(),user.getIdentifiant(), user.getMotdepasse());
                break;
@@ -39,6 +40,12 @@ public class UtilisateurControl implements PropertyChangeListener {
                user=getUtilisateur();
                this.utilisateurListModel.updateUtilisateur(user.getId(),user.getIdUtilisateurCommune(),this.utilisateurView.accessGetNomUtilisateur(),this.utilisateurView.accessGetPrenomUtilisateur(),this.utilisateurView.accessGetLoginUtilisateur(), this.utilisateurView.accessGetPasswordUtilisateur());
                refreshUtilisateurView();
+               break;
+           case "suppressionUtilisateur":
+               user=getUtilisateur();
+               this.utilisateurListModel.deleteUtilisateur(user.getId());
+               refreshUtilisateurView();
+               break;
        }
     }
     public Utilisateur getUtilisateur(){
@@ -47,7 +54,7 @@ public class UtilisateurControl implements PropertyChangeListener {
     }
     public void refreshUtilisateurView() {
         try{
-            this.utilisateurListModel=new UtilisateurListModel(7);//modifier avec l'id transmit par les communes
+            this.utilisateurListModel=new UtilisateurListModel(5);//modifier avec l'id transmit par les communes
             this.utilisateurView.setUtilisateurListModel(this.utilisateurListModel);
         }catch(Exception ex){
             Logger.getLogger(CommuneControl.class.getName()).log(Level.SEVERE, null, ex);

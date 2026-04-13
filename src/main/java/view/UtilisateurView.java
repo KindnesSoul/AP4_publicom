@@ -70,6 +70,11 @@ public class UtilisateurView extends javax.swing.JPanel {
 
         jButtonSupprimerListeUtilisateur.setText("Supprimer");
         jButtonSupprimerListeUtilisateur.setToolTipText("");
+        jButtonSupprimerListeUtilisateur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSupprimerListeUtilisateurActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -111,7 +116,7 @@ public class UtilisateurView extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonModifierListeUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModifierListeUtilisateurActionPerformed
-        listeners.firePropertyChange("ModificationUtilisateur", null, null);
+        listeners.firePropertyChange("AffichageModificationUtilisateur", null, null);
         String[] options = {"Valider", "Annuler"};
         int result = JOptionPane.showOptionDialog(
                 this,
@@ -145,6 +150,17 @@ public class UtilisateurView extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButtonAjouterListeUtilisateurActionPerformed
 
+    private void jButtonSupprimerListeUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSupprimerListeUtilisateurActionPerformed
+    int result = JOptionPane.showConfirmDialog(this, "Etes vous certain de supprimer cette utilisateur ?");
+        if (result == JOptionPane.OK_OPTION) {
+            if(this.getUtilisateurIndex()!=-1){
+                listeners.firePropertyChange("suppressionUtilisateur", null, null);
+            } else {
+                JOptionPane.showMessageDialog(this, "Veuillez sélectionner un utilisateur pour pouvoir le supprimer.");
+            }
+        }
+    }//GEN-LAST:event_jButtonSupprimerListeUtilisateurActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAjouterListeUtilisateur;
@@ -159,6 +175,7 @@ public class UtilisateurView extends javax.swing.JPanel {
         this.jListUtilisateur.setModel(utilisateurListModel);
     }
     public int getUtilisateurIndex(){
+        System.out.println(this.jListUtilisateur.getSelectedIndex());
         return this.jListUtilisateur.getSelectedIndex();    
     }
     public void accesSetEditPanel(String prenom,String nom, String login,String password){

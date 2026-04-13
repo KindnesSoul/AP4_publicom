@@ -26,6 +26,11 @@ public class UtilisateurListModel extends AbstractListModel{
     public void updateUtilisateur(int id,int idUtilisateurCommune,String nom,String prenom,String login ,String password){
         this.utilisateurDAO.updateUtilisateur(id,idUtilisateurCommune,nom,prenom,login,password);
     }
+    
+     public void deleteUtilisateur(int id) {
+        this.utilisateurDAO.deleteUserAt(id);
+    }
+     
 
     @Override
     public int getSize() {
@@ -36,4 +41,6 @@ public class UtilisateurListModel extends AbstractListModel{
     public Utilisateur getElementAt(int index) {
         return listeUtilisateur.get(index);
     }
+
+   
 }
