@@ -45,7 +45,7 @@ public class MainControl implements PropertyChangeListener {
                 System.out.println(selected);
                 
                 if (selected != null) {
-                    this.utilisateurControl.refreshUtilisateurListModel(selected.getId());
+                    this.utilisateurControl.refreshUtilisateurListModel(selected.getId(),selected.getNom());
                     this.mainView.showUserViewForCommune(selected);
                 }
                 break;

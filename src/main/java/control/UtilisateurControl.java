@@ -61,11 +61,12 @@ public class UtilisateurControl implements PropertyChangeListener {
         return this.utilisateurListModel.getElementAt(index);
     }
 
-    public void refreshUtilisateurListModel(int idCommune) {
+    public void refreshUtilisateurListModel(int idCommune,String nomCommune) {
         try {
             System.out.println("idCommune :" + idCommune);
             this.utilisateurListModel.setSelectedCommuneId(idCommune);
             this.utilisateurListModel.refresh();
+            this.utilisateurView.updateTitreListe(nomCommune);
             //System.out.println("ListeModel :" + this.utilisateurListModel);
             
             

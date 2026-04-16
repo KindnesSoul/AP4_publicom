@@ -17,26 +17,23 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabelEditPrenomUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextFieldEditIdentifiantUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
-                          <Component id="jTextFieldEditPrenomUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
-                          <Component id="jTextFieldEditNomUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
-                          <Component id="jTextFieldPasswordEditUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
-                          <Component id="jLabelEditPasswordUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabelEditIdentifiantUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabelEditNomUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="250" max="-2" attributes="0"/>
-                      <Component id="jLabelTitreEditUtilisateur" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
+              <EmptySpace min="-2" pref="250" max="-2" attributes="0"/>
+              <Component id="jLabelTitreEditUtilisateur" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="78" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabelEditPrenomUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldEditIdentifiantUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
+                  <Component id="jTextFieldEditPrenomUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
+                  <Component id="jTextFieldEditNomUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
+                  <Component id="jTextFieldPasswordEditUtilisateur" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
+                  <Component id="jLabelEditPasswordUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelEditIdentifiantUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelEditNomUtilisateur" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -45,7 +42,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
               <Component id="jLabelTitreEditUtilisateur" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Component id="jLabelEditPrenomUtilisateur" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jTextFieldEditPrenomUtilisateur" min="-2" max="-2" attributes="0"/>
@@ -61,7 +58,7 @@
               <Component id="jLabelEditPasswordUtilisateur" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jTextFieldPasswordEditUtilisateur" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="72" max="32767" attributes="0"/>
+              <EmptySpace pref="81" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
