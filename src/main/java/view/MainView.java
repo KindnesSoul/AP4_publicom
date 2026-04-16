@@ -173,4 +173,8 @@ public class MainView extends javax.swing.JFrame {
         card = (CardLayout) utilisateurView.getLayout();
         card.show(utilisateurView, "cardListeUtilisateur");
     }
+    public void AffichageCommune(){
+        CardLayout cardLayout = (CardLayout) this.MainPanel.getLayout();
+        cardLayout.show(this.MainPanel, "cardViewCommune");
+    }
 }

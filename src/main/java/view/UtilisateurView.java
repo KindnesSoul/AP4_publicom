@@ -43,6 +43,7 @@ public class UtilisateurView extends javax.swing.JPanel {
         jButtonAjouterListeUtilisateur = new javax.swing.JButton();
         jButtonModifierListeUtilisateur = new javax.swing.JButton();
         jButtonSupprimerListeUtilisateur = new javax.swing.JButton();
+        jButtonRetour = new javax.swing.JButton();
 
         jListUtilisateur.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -76,14 +77,21 @@ public class UtilisateurView extends javax.swing.JPanel {
             }
         });
 
+        jButtonRetour.setText("Retour");
+        jButtonRetour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRetourActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(148, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButtonModifierListeUtilisateur)
@@ -92,26 +100,32 @@ public class UtilisateurView extends javax.swing.JPanel {
                             .addComponent(jScrollPaneUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(143, 143, 143))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(jLabelTitreListeUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(90, 90, 90)
+                        .addComponent(jButtonRetour)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonAjouterListeUtilisateur)))
-                .addGap(112, 112, 112))
+                .addGap(90, 90, 90))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(251, 251, 251)
+                .addComponent(jLabelTitreListeUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(260, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(77, 77, 77)
+                .addGap(46, 46, 46)
+                .addComponent(jLabelTitreListeUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAjouterListeUtilisateur)
-                    .addComponent(jLabelTitreListeUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                    .addComponent(jButtonRetour))
+                .addGap(23, 23, 23)
                 .addComponent(jScrollPaneUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(80, 80, 80)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonModifierListeUtilisateur)
                     .addComponent(jButtonSupprimerListeUtilisateur))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -161,10 +175,15 @@ public class UtilisateurView extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButtonSupprimerListeUtilisateurActionPerformed
 
+    private void jButtonRetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRetourActionPerformed
+        listeners.firePropertyChange("RetourCommuneListe", null, null);        
+    }//GEN-LAST:event_jButtonRetourActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAjouterListeUtilisateur;
     private javax.swing.JButton jButtonModifierListeUtilisateur;
+    private javax.swing.JButton jButtonRetour;
     private javax.swing.JButton jButtonSupprimerListeUtilisateur;
     private javax.swing.JLabel jLabelTitreListeUtilisateur;
     private javax.swing.JList<String> jListUtilisateur;

@@ -27,6 +27,7 @@ public class MainControl implements PropertyChangeListener {
         
         // je m'abonne aux notifs de CommuneView
         this.mainView.getCommuneView().addPropertyChangeListener(this);
+        this.mainView.getUtilisateurView().addPropertyChangeListener(this);
         
         this.communeControl = new CommuneControl(this.mainView.getCommuneView());
         this.utilisateurControl = new UtilisateurControl(this.mainView.getUtilisateurView());
@@ -47,6 +48,9 @@ public class MainControl implements PropertyChangeListener {
                     this.utilisateurControl.refreshUtilisateurListModel(selected.getId());
                     this.mainView.showUserViewForCommune(selected);
                 }
+                break;
+            case "RetourCommuneListe":
+                this.mainView.AffichageCommune();
                 break;
         }
     }
