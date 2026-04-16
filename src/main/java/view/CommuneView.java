@@ -143,13 +143,12 @@ public class CommuneView extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonSupprActionPerformed
 
     private void jButtonVoirUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoirUtilisateurActionPerformed
-        
+
         Commune selected = getSelectedCommune();
         if (selected != null) {
-            MainView mainView = (MainView) this.getTopLevelAncestor();
-            mainView.showUserViewForCommune(selected);
+            listeners.firePropertyChange("showUsersForCommune", null, selected);
         } else {
-            JOptionPane.showMessageDialog(this, "Veuillez sélectionner une commune pour voir ses utilisateurs.");
+            JOptionPane.showMessageDialog(this, "Veuillez sélectionner une commune avant de voir ses utilisateurs.");
         }
 
 
@@ -231,8 +230,6 @@ public class CommuneView extends javax.swing.JPanel {
 
     public Integer getSelectedCommuneId() {
         return this.jListCommune.getSelectedIndex();
-        //Commune selected = getSelectedCommune();
-        //return selected != null ? selected.getId() : null;
     }
 
     public void useLayout(String cardtext) {

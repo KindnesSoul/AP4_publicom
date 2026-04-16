@@ -23,7 +23,7 @@ public class UtilisateurControl implements PropertyChangeListener {
     public UtilisateurControl(UtilisateurView utilisateurView) {
         this.utilisateurView=utilisateurView;
         this.utilisateurView.addPropertyChangeListener(this);
-        refreshUtilisateurView();
+        refreshUtilisateurView(5);
         
     }
 
@@ -38,18 +38,18 @@ public class UtilisateurControl implements PropertyChangeListener {
            case "AjoutUtilisateur":
                user=getUtilisateur();
                this.utilisateurListModel.addUtilisateur(user.getIdUtilisateurCommune(),this.utilisateurView.accessGetNomUtilisateur(),this.utilisateurView.accessGetPrenomUtilisateur(),this.utilisateurView.accessGetLoginUtilisateur(), this.utilisateurView.accessGetPasswordUtilisateur());
-               refreshUtilisateurView();
+               refreshUtilisateurView(5);
                break;
             
            case "ConfirmModificationUtilisateur":
                user=getUtilisateur();
                this.utilisateurListModel.updateUtilisateur(user.getId(),user.getIdUtilisateurCommune(),this.utilisateurView.accessGetNomUtilisateur(),this.utilisateurView.accessGetPrenomUtilisateur(),this.utilisateurView.accessGetLoginUtilisateur(), this.utilisateurView.accessGetPasswordUtilisateur());
-               refreshUtilisateurView();
+               refreshUtilisateurView(5);
                break;
            case "suppressionUtilisateur":
                user=getUtilisateur();
                this.utilisateurListModel.deleteUtilisateur(user.getId());
-               refreshUtilisateurView();
+               refreshUtilisateurView(5);
                break;
        }
     }
@@ -57,9 +57,9 @@ public class UtilisateurControl implements PropertyChangeListener {
         int index=this.utilisateurView.getUtilisateurIndex();
         return this.utilisateurListModel.getElementAt(index);
     }
-    public void refreshUtilisateurView() {
+    public void refreshUtilisateurView(int idCommune) {
         try{
-            this.utilisateurListModel=new UtilisateurListModel(5);//modifier avec l'id transmit par les communes
+            this.utilisateurListModel=new UtilisateurListModel(idCommune);//modifier avec l'id transmit par les communes
             this.utilisateurView.setUtilisateurListModel(this.utilisateurListModel);
         }catch(Exception ex){
             Logger.getLogger(CommuneControl.class.getName()).log(Level.SEVERE, null, ex);

@@ -7,6 +7,7 @@ package control;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import javax.swing.JOptionPane;
+import model.Commune;
 import view.MainView;
 
 /**
@@ -37,9 +38,13 @@ public class MainControl implements PropertyChangeListener {
             case "....":
                 JOptionPane.showMessageDialog(null, "Notif recue !!!");
                 break;
-        }        
+            case "showUsersForCommune":
+                Commune selected = (Commune) evt.getNewValue();
+                if (selected != null) {
+                    this.mainView.showUserViewForCommune(selected);
+                    this.utilisateurControl.refreshUtilisateurView(selected.getId());
+                }
+                break;
+        }
     }
-    
-    
-    
 }
