@@ -40,9 +40,12 @@ public class MainControl implements PropertyChangeListener {
                 break;
             case "showUsersForCommune":
                 Commune selected = (Commune) evt.getNewValue();
+                
+                System.out.println(selected);
+                
                 if (selected != null) {
+                    this.utilisateurControl.refreshUtilisateurListModel(selected.getId());
                     this.mainView.showUserViewForCommune(selected);
-                    this.utilisateurControl.refreshUtilisateurView(selected.getId());
                 }
                 break;
         }

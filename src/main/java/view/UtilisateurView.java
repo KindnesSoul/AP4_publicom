@@ -81,10 +81,9 @@ public class UtilisateurView extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(112, 112, 112)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
+                        .addContainerGap(148, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButtonModifierListeUtilisateur)
@@ -93,7 +92,8 @@ public class UtilisateurView extends javax.swing.JPanel {
                             .addComponent(jScrollPaneUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(143, 143, 143))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelTitreListeUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(122, 122, 122)
+                        .addComponent(jLabelTitreListeUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonAjouterListeUtilisateur)))
                 .addGap(112, 112, 112))
@@ -172,6 +172,7 @@ public class UtilisateurView extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     public void setUtilisateurListModel(UtilisateurListModel utilisateurListModel) {
+        System.out.println(utilisateurListModel);
         this.jListUtilisateur.setModel(utilisateurListModel);
     }
     public int getUtilisateurIndex(){

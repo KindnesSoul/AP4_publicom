@@ -17,53 +17,62 @@ import view.UtilisateurView;
  * @author m.arakelian
  */
 public class UtilisateurControl implements PropertyChangeListener {
+
     UtilisateurView utilisateurView;
     UtilisateurListModel utilisateurListModel;
-    
-    public UtilisateurControl(UtilisateurView utilisateurView) {
-        this.utilisateurView=utilisateurView;
+    //int idCommune;
+
+    public UtilisateurControl(UtilisateurView utilisateurView/*,int idCommune*/) {
+        this.utilisateurView = utilisateurView;
         this.utilisateurView.addPropertyChangeListener(this);
-        refreshUtilisateurView(5);
-        
+        this.utilisateurListModel= new UtilisateurListModel();
+        this.utilisateurView.setUtilisateurListModel(this.utilisateurListModel);
+
     }
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         Utilisateur user;
-       switch (evt.getPropertyName()) {
-           case "AffichageModificationUtilisateur":   
-               user=getUtilisateur();
-               this.utilisateurView.accesSetEditPanel(user.getPrenom(),user.getNom(),user.getIdentifiant(), user.getMotdepasse());
-               break;
-           case "AjoutUtilisateur":
-               user=getUtilisateur();
-               this.utilisateurListModel.addUtilisateur(user.getIdUtilisateurCommune(),this.utilisateurView.accessGetNomUtilisateur(),this.utilisateurView.accessGetPrenomUtilisateur(),this.utilisateurView.accessGetLoginUtilisateur(), this.utilisateurView.accessGetPasswordUtilisateur());
-               refreshUtilisateurView(5);
-               break;
-            
-           case "ConfirmModificationUtilisateur":
-               user=getUtilisateur();
-               this.utilisateurListModel.updateUtilisateur(user.getId(),user.getIdUtilisateurCommune(),this.utilisateurView.accessGetNomUtilisateur(),this.utilisateurView.accessGetPrenomUtilisateur(),this.utilisateurView.accessGetLoginUtilisateur(), this.utilisateurView.accessGetPasswordUtilisateur());
-               refreshUtilisateurView(5);
-               break;
-           case "suppressionUtilisateur":
-               user=getUtilisateur();
-               this.utilisateurListModel.deleteUtilisateur(user.getId());
-               refreshUtilisateurView(5);
-               break;
-       }
-    }
-    public Utilisateur getUtilisateur(){
-        int index=this.utilisateurView.getUtilisateurIndex();
-        return this.utilisateurListModel.getElementAt(index);
-    }
-    public void refreshUtilisateurView(int idCommune) {
-        try{
-            this.utilisateurListModel=new UtilisateurListModel(idCommune);//modifier avec l'id transmit par les communes
-            this.utilisateurView.setUtilisateurListModel(this.utilisateurListModel);
-        }catch(Exception ex){
-            Logger.getLogger(CommuneControl.class.getName()).log(Level.SEVERE, null, ex);
+        switch (evt.getPropertyName()) {
+            case "AffichageModificationUtilisateur":
+                user = getUtilisateur();
+                this.utilisateurView.accesSetEditPanel(user.getPrenom(), user.getNom(), user.getIdentifiant(), user.getMotdepasse());
+                break;
+            case "AjoutUtilisateur":
+                this.utilisateurListModel.addUtilisateur(this.utilisateurListModel.getSelectedCommuneId(), this.utilisateurView.accessGetNomUtilisateur(), this.utilisateurView.accessGetPrenomUtilisateur(), this.utilisateurView.accessGetLoginUtilisateur(), this.utilisateurView.accessGetPasswordUtilisateur());
+                this.utilisateurListModel.refresh();
+                break;
+
+            case "ConfirmModificationUtilisateur":
+                user = getUtilisateur();
+                this.utilisateurListModel.updateUtilisateur(user.getId(), user.getIdUtilisateurCommune(), this.utilisateurView.accessGetNomUtilisateur(), this.utilisateurView.accessGetPrenomUtilisateur(), this.utilisateurView.accessGetLoginUtilisateur(), this.utilisateurView.accessGetPasswordUtilisateur());
+                this.utilisateurListModel.refresh();
+                break;
+            case "suppressionUtilisateur":
+                user = getUtilisateur();
+                this.utilisateurListModel.deleteUtilisateur(user.getId());
+                this.utilisateurListModel.refresh();
+                break;
         }
     }
-    
+
+    public Utilisateur getUtilisateur() {
+        int index = this.utilisateurView.getUtilisateurIndex();
+        return this.utilisateurListModel.getElementAt(index);
+    }
+
+    public void refreshUtilisateurListModel(int idCommune) {
+        try {
+            System.out.println("idCommune :" + idCommune);
+            this.utilisateurListModel.setSelectedCommuneId(idCommune);
+            this.utilisateurListModel.refresh();
+            //System.out.println("ListeModel :" + this.utilisateurListModel);
+            
+            
+
+        } catch (Exception ex) {
+            Logger.getLogger(UtilisateurControl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }

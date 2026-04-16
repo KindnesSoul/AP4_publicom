@@ -62,7 +62,7 @@ public class UtilisateurDAO {
        
     }
     void addUtilisateur (int idUtilisateurCommune, String nom, String prenom, String login, String password) {
-        String SQL =("INSERT INTO `utilisateur`( `ID_UTILISATEURCOMMUNE`, `PRENOM`, `NOM`, `IDENTIFIANT`, `MOTDEPASSE`) VALUES ('(?)','(?)','(?)','(?)','(?)','(?)');");
+        String SQL =("INSERT INTO `utilisateur`( `ID_UTILISATEURCOMMUNE`, `PRENOM`, `NOM`, `IDENTIFIANT`, `MOTDEPASSE`) VALUES ('(?)','(?)','(?)','(?)','(?)');");
         try (PreparedStatement preparedStatement = connexion.prepareStatement(SQL)) {
             preparedStatement.setInt(1,idUtilisateurCommune);
             preparedStatement.setString(2,prenom);
