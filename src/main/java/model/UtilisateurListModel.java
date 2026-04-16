@@ -23,6 +23,11 @@ public class UtilisateurListModel extends AbstractListModel{
     private void refresh(int idCommune){
         this.listeUtilisateur=this.utilisateurDAO.getAllUtilisateur(idCommune);
     }
+    
+    public void addUtilisateur(int idUtilisateurCommune , String nom ,String prenom ,String login ,String password){
+        this.utilisateurDAO.addUtilisateur(idUtilisateurCommune, nom, prenom, login, password);
+
+    }
     public void updateUtilisateur(int id,int idUtilisateurCommune,String nom,String prenom,String login ,String password){
         this.utilisateurDAO.updateUtilisateur(id,idUtilisateurCommune,nom,prenom,login,password);
     }

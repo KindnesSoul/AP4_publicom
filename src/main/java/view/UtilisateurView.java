@@ -146,7 +146,7 @@ public class UtilisateurView extends javax.swing.JPanel {
                 options[0]
         );
         if (result == JOptionPane.OK_OPTION) {
-            listeners.firePropertyChange("", null, null);
+            listeners.firePropertyChange("AjoutUtilisateur", null, null);
         }
     }//GEN-LAST:event_jButtonAjouterListeUtilisateurActionPerformed
 

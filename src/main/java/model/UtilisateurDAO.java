@@ -61,6 +61,21 @@ public class UtilisateurDAO {
         }
        
     }
+    void addUtilisateur (int idUtilisateurCommune, String nom, String prenom, String login, String password) {
+        String SQL =("INSERT INTO `utilisateur`( `ID_UTILISATEURCOMMUNE`, `PRENOM`, `NOM`, `IDENTIFIANT`, `MOTDEPASSE`) VALUES ('(?)','(?)','(?)','(?)','(?)','(?)');");
+        try (PreparedStatement preparedStatement = connexion.prepareStatement(SQL)) {
+            preparedStatement.setInt(1,idUtilisateurCommune);
+            preparedStatement.setString(2,prenom);
+            preparedStatement.setString(3,nom);
+            preparedStatement.setString(4,login);
+            preparedStatement.setString(5,password);
+            preparedStatement.executeUpdate();
+            
+        }catch (SQLException ex){
+            Logger.getLogger(UtilisateurDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+    }
 
     void deleteUserAt(int id) {
         String SQL =("delete from utilisateur where (?)= id");

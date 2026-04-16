@@ -35,6 +35,11 @@ public class UtilisateurControl implements PropertyChangeListener {
                user=getUtilisateur();
                this.utilisateurView.accesSetEditPanel(user.getPrenom(),user.getNom(),user.getIdentifiant(), user.getMotdepasse());
                break;
+           case "AjoutUtilisateur":
+               user=getUtilisateur();
+               this.utilisateurListModel.addUtilisateur(user.getIdUtilisateurCommune(),this.utilisateurView.accessGetNomUtilisateur(),this.utilisateurView.accessGetPrenomUtilisateur(),this.utilisateurView.accessGetLoginUtilisateur(), this.utilisateurView.accessGetPasswordUtilisateur());
+               refreshUtilisateurView();
+               break;
             
            case "ConfirmModificationUtilisateur":
                user=getUtilisateur();
