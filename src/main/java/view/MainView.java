@@ -46,12 +46,6 @@ public class MainView extends javax.swing.JFrame {
     private void initComponents() {
 
         MainPanel = new javax.swing.JPanel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        CheckBoxUtilisateurListe = new javax.swing.JCheckBoxMenuItem();
-        CheckBoxUtilisateurAjout = new javax.swing.JCheckBoxMenuItem();
-        CheckBoxUtilisateurModif = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(716, 510));
@@ -59,43 +53,6 @@ public class MainView extends javax.swing.JFrame {
 
         MainPanel.setPreferredSize(new java.awt.Dimension(716, 510));
         MainPanel.setLayout(new java.awt.CardLayout());
-
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-
-        CheckBoxUtilisateurListe.setSelected(true);
-        CheckBoxUtilisateurListe.setText("CheckBoxUtilisateur");
-        CheckBoxUtilisateurListe.setActionCommand("");
-        CheckBoxUtilisateurListe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckBoxUtilisateurListeActionPerformed(evt);
-            }
-        });
-        jMenu2.add(CheckBoxUtilisateurListe);
-
-        CheckBoxUtilisateurAjout.setSelected(true);
-        CheckBoxUtilisateurAjout.setText("jCheckBoxMenuItem2");
-        CheckBoxUtilisateurAjout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckBoxUtilisateurAjoutActionPerformed(evt);
-            }
-        });
-        jMenu2.add(CheckBoxUtilisateurAjout);
-
-        CheckBoxUtilisateurModif.setSelected(true);
-        CheckBoxUtilisateurModif.setText("jCheckBoxMenuItem1");
-        CheckBoxUtilisateurModif.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckBoxUtilisateurModifActionPerformed(evt);
-            }
-        });
-        jMenu2.add(CheckBoxUtilisateurModif);
-
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,53 +65,18 @@ public class MainView extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void CheckBoxUtilisateurAjoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxUtilisateurAjoutActionPerformed
-        // TODO add your handling code here:
-        CardLayout card = (CardLayout) MainPanel.getLayout();
-        card.show(MainPanel, "cardViewUtilisateur");
-
-        card = (CardLayout) utilisateurView.getLayout();
-        card.show(utilisateurView, "cardEditUtilisateur");
-
-    }//GEN-LAST:event_CheckBoxUtilisateurAjoutActionPerformed
-
-    private void CheckBoxUtilisateurListeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxUtilisateurListeActionPerformed
-        // TODO add your handling code here:
-        CardLayout card = (CardLayout) MainPanel.getLayout();
-        card.show(MainPanel, "cardViewUtilisateur");
-
-        card = (CardLayout) utilisateurView.getLayout();
-        card.show(utilisateurView, "cardListeUtilisateur");
-
-    }//GEN-LAST:event_CheckBoxUtilisateurListeActionPerformed
-
-    private void CheckBoxUtilisateurModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxUtilisateurModifActionPerformed
-        CardLayout card = (CardLayout) MainPanel.getLayout();
-        card.show(MainPanel, "cardViewUtilisateur");
-
-        card = (CardLayout) utilisateurView.getLayout();
-        card.show(utilisateurView, "cardEditUtilisateur");
-
-    }//GEN-LAST:event_CheckBoxUtilisateurModifActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBoxMenuItem CheckBoxUtilisateurAjout;
-    private javax.swing.JCheckBoxMenuItem CheckBoxUtilisateurListe;
-    private javax.swing.JCheckBoxMenuItem CheckBoxUtilisateurModif;
     private javax.swing.JPanel MainPanel;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
     public void useLayout(String cardtext) {
         CardLayout card = (CardLayout) MainPanel.getLayout();
