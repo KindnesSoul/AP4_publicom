@@ -181,6 +181,9 @@ public class CommuneView extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonModifActionPerformed
 
     private void jButtonAjoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAjoutActionPerformed
+        this.communeEditPanel.setNom("");
+        this.communeEditPanel.setDescription("");
+        this.communeEditPanel.setCodePostal(0);
         String[] options = {"Valider", "Annuler"};
         int result = JOptionPane.showOptionDialog(
                 this,
