@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `ap4_publicom`
 --
+CREATE DATABASE IF NOT EXISTS `ap4_publicom` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `ap4_publicom`;
 
 -- --------------------------------------------------------
 
@@ -32,9 +34,9 @@ CREATE TABLE IF NOT EXISTS `commune` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `NOM` char(32) DEFAULT NULL,
   `CODEPOSTAL` bigint DEFAULT NULL,
-  `DESCRIPTION` char(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `DESCRIPTION` char(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `commune`
@@ -57,10 +59,10 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `PRENOM` char(32) DEFAULT NULL,
   `NOM` char(32) DEFAULT NULL,
   `IDENTIFIANT` char(32) DEFAULT NULL,
-  `MOTDEPASSE` char(72) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `MOTDEPASSE` char(72) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `I_FK_UTILISATEUR_COMMUNE` (`ID_UTILISATEURCOMMUNE`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `utilisateur`
