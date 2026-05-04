@@ -155,6 +155,7 @@ public class CommuneView extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonVoirUtilisateurActionPerformed
 
     private void jButtonModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModifActionPerformed
+        this.communeEditPanel.setJLabelModifCommune("Modification");
         Commune selected = getSelectedCommune();
         if (selected != null) {
             communeEditPanel.setNom(selected.getNom());
@@ -181,6 +182,7 @@ public class CommuneView extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonModifActionPerformed
 
     private void jButtonAjoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAjoutActionPerformed
+        this.communeEditPanel.setJLabelModifCommune("Ajout");
         this.communeEditPanel.setNom("");
         this.communeEditPanel.setDescription("");
         this.communeEditPanel.setCodePostal(0);

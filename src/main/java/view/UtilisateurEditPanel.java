@@ -72,11 +72,11 @@ public class UtilisateurEditPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(250, 250, 250)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabelTitreEditUtilisateur)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(78, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelEditPrenomUtilisateur)
                     .addComponent(jTextFieldEditIdentifiantUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -159,6 +159,9 @@ public class UtilisateurEditPanel extends javax.swing.JPanel {
 
     public String getPasswordUtilisateur() {
         return this.jTextFieldPasswordEditUtilisateur.getText();
+    }
+    public void setJLabelTitreEditUtilisateur(String titre){
+        this.jLabelTitreEditUtilisateur.setText(titre+" Utilisateur");
     }
     
    

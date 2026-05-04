@@ -129,6 +129,7 @@ public class UtilisateurView extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonModifierListeUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModifierListeUtilisateurActionPerformed
+        this.utilisateurEditPanel.setJLabelTitreEditUtilisateur("Modification");
         listeners.firePropertyChange("AffichageModificationUtilisateur", null, null);
         String[] options = {"Valider", "Annuler"};
         int result = JOptionPane.showOptionDialog(
@@ -147,6 +148,7 @@ public class UtilisateurView extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonModifierListeUtilisateurActionPerformed
 
     private void jButtonAjouterListeUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAjouterListeUtilisateurActionPerformed
+        this.utilisateurEditPanel.setJLabelTitreEditUtilisateur("Ajout");
         this.accesSetEditPanel("","","","");
         String[] options = {"Valider", "Annuler"};
         int result = JOptionPane.showOptionDialog(

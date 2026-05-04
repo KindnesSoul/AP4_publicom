@@ -147,4 +147,7 @@ public class CommuneEditPanel extends javax.swing.JPanel {
     public void setDescription(String description) {
         this.jTextFieldEditDescrip.setText(description);
     }
+    public void setJLabelModifCommune(String titre){
+        this.jLabelModifCommune.setText(titre+" Commune");
+    }
 }
