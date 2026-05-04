@@ -15,9 +15,9 @@ import java.util.logging.Logger;
  */
 public class Connexion {
     
-    private static String url = "jdbc:mysql://172.28.1.4:3306/ap4_publicom";//jdbc:mysql://arakelian.sion.fr:3306/ap4_publicom
-    private static String user = "ap4";//root
-    private static String pass = "ap4";//MAT1302@
+    private static String url = "jdbc:mysql://172.28.1.4:3306/ap4_publicom";//"jdbc:mysql://localhost:3306/ap4_publicom
+    private static String user = "ap4";//ap4
+    private static String pass = "ap4";//ap4
     private static Connection con = null;
     
     public static Connection getConnection() {

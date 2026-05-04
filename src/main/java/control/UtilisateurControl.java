@@ -36,17 +36,23 @@ public class UtilisateurControl implements PropertyChangeListener {
         switch (evt.getPropertyName()) {
             case "AffichageModificationUtilisateur":
                 user = getUtilisateur();
-                this.utilisateurView.accesSetEditPanel(user.getPrenom(), user.getNom(), user.getIdentifiant(), user.getMotdepasse());
+                
+                    this.utilisateurView.accesSetEditPanel(user.getPrenom(), user.getNom(), user.getIdentifiant(), user.getMotdepasse());
+                
                 break;
             case "AjoutUtilisateur":
-                this.utilisateurListModel.addUtilisateur(this.utilisateurListModel.getSelectedCommuneId(), this.utilisateurView.accessGetNomUtilisateur(), this.utilisateurView.accessGetPrenomUtilisateur(), this.utilisateurView.accessGetLoginUtilisateur(), this.utilisateurView.accessGetPasswordUtilisateur());
-                this.utilisateurListModel.refresh();
+                if(this.utilisateurView.testParameterUtilisateur()){
+                    this.utilisateurListModel.addUtilisateur(this.utilisateurListModel.getSelectedCommuneId(), this.utilisateurView.accessGetNomUtilisateur(), this.utilisateurView.accessGetPrenomUtilisateur(), this.utilisateurView.accessGetLoginUtilisateur(), this.utilisateurView.accessGetPasswordUtilisateur());
+                    this.utilisateurListModel.refresh();
+                }
                 break;
 
             case "ConfirmModificationUtilisateur":
                 user = getUtilisateur();
-                this.utilisateurListModel.updateUtilisateur(user.getId(), user.getIdUtilisateurCommune(), this.utilisateurView.accessGetNomUtilisateur(), this.utilisateurView.accessGetPrenomUtilisateur(), this.utilisateurView.accessGetLoginUtilisateur(), this.utilisateurView.accessGetPasswordUtilisateur());
-                this.utilisateurListModel.refresh();
+                if(this.utilisateurView.testParameterUtilisateur()){
+                    this.utilisateurListModel.updateUtilisateur(user.getId(), user.getIdUtilisateurCommune(), this.utilisateurView.accessGetNomUtilisateur(), this.utilisateurView.accessGetPrenomUtilisateur(), this.utilisateurView.accessGetLoginUtilisateur(), this.utilisateurView.accessGetPasswordUtilisateur());
+                    this.utilisateurListModel.refresh();
+                }
                 break;
             case "suppressionUtilisateur":
                 user = getUtilisateur();

@@ -219,4 +219,21 @@ public class UtilisateurView extends javax.swing.JPanel {
     public void updateTitreListe(String nomCommune){
     this.jLabelTitreListeUtilisateur.setText("Liste des utilisateurs de "+nomCommune);
     }
+
+    public boolean testParameterUtilisateur() {
+        boolean test=true;
+        if("".equals(this.utilisateurEditPanel.getNomUtilisateur())){
+            test=false;
+        }
+        if("".equals(this.utilisateurEditPanel.getPrenomUtilisateur())){
+            test=false;
+        }
+        if("".equals(this.utilisateurEditPanel.getLoginUtilisateur())){
+            test=false;
+        }
+        if("".equals(this.utilisateurEditPanel.getPasswordUtilisateur())){
+            test=false;
+        }
+        return test;
+    }
 }

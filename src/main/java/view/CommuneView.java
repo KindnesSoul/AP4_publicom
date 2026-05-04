@@ -241,4 +241,18 @@ public class CommuneView extends javax.swing.JPanel {
         CardLayout card = (CardLayout) this.getLayout();
         card.show(this, cardtext);
     }
+
+    public boolean testParameterCommune() {
+        boolean test=true;
+        if("".equals(this.communeEditPanel.getDescription())){
+            test=false;
+        }
+        if("".equals(this.communeEditPanel.getNom())){
+            test=false;
+        }
+        if(this.communeEditPanel.getCodePostal()<9999){
+            test=false;
+        }
+        return test;
+    }
 }

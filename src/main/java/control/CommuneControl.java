@@ -39,21 +39,25 @@ public class CommuneControl implements PropertyChangeListener {
     public void propertyChange(PropertyChangeEvent evt) {
         switch (evt.getPropertyName()) {
             case "validModifCommune":
-                Commune selected = (Commune) evt.getNewValue();  
-                if (selected != null) {
-                    String nom = this.communeview.getNom();
-                    int codePostal = this.communeview.getCodePostal();
-                    String description = this.communeview.getDescription();
-                    this.communeListModel.save(selected.getId(), nom, codePostal, description);
-                    refreshCommuneView();
+                if(this.communeview.testParameterCommune()){
+                    Commune selected = (Commune) evt.getNewValue();  
+                    if (selected != null) {
+                        String nom = this.communeview.getNom();
+                        int codePostal = this.communeview.getCodePostal();
+                        String description = this.communeview.getDescription();
+                        this.communeListModel.save(selected.getId(), nom, codePostal, description);
+                        refreshCommuneView();
+                    }
                 }
                 break;
             case "validNouvelleCommune":
-                String nom = this.communeview.getNom();
-                int codePostal = this.communeview.getCodePostal();
-                String description = this.communeview.getDescription();
-                this.communeListModel.save(0, nom, codePostal, description);
-                refreshCommuneView();
+                if(this.communeview.testParameterCommune()){
+                    String nom = this.communeview.getNom();
+                    int codePostal = this.communeview.getCodePostal();
+                    String description = this.communeview.getDescription();
+                    this.communeListModel.save(0, nom, codePostal, description);
+                    refreshCommuneView();
+                }
                 break;
             case "deleteSelectedCommune":
                 int index = this.communeview.getSelectedCommuneId();
